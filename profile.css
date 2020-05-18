@@ -319,10 +319,13 @@ border-bottom: 1px solid #ddd;
  
  .responsive-change:nth-child(1){ 
  order: 2;
+margin-top: 10em;
+
   }
 
   .responsive-change:nth-child(2) {
     order: 1;
+ 
   }
 
  .col-user-image { 
