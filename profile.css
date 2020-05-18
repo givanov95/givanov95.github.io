@@ -316,6 +316,15 @@ border-bottom: 1px solid #ddd;
 /*responsive*/
 
 @media all and (max-width: 992px){
+ 
+ .responsive-change:nth-child(1){ 
+ order: 2;
+  }
+
+  .responsive-change:nth-child(2) {
+    order: 1;
+  }
+
  .col-user-image { 
  display: none; 
 }
