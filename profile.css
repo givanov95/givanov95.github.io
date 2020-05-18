@@ -1,0 +1,371 @@
+/*reset*/
+
+*{
+	padding:0;
+	margin:0;
+}
+
+
+html{
+
+	font:14px/1.5 'Work Sans', sans-serif;";
+	color:#222;
+	box-sizing: border-box;
+	 scroll-behavior: smooth;
+	
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+   a{
+    color: #6f4e37;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+
+/*end_reset*/
+
+/*typogr*/
+
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
+/* Animation */
+.hello-text {
+	white-space: nowrap;
+  overflow: hidden;    
+  font-family: 'Source Code Pro', monospace;   
+  color: rgba(0,0,0,.70);
+  animation: animated-text 3s ease 2s infinite normal both;
+  font-size: 4em;
+}
+
+/* text animation */
+
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 100%;}
+}
+
+
+body, form, input, textarea, option, select, button{
+	font:inherit;
+	
+}
+img{ 
+max-width: 100%;
+height: auto; }
+
+h2{
+font-size: 42px;
+font-weight: bold;
+margin-bottom: 3%;
+}
+
+h3{ 
+font-weight: bold;
+text-align: center;
+margin:1% 0; 
+font-size: 2em;
+
+ }
+
+/*end_typogr*/
+
+
+/*main-site*/
+
+@keyframes fade-up {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+ 
+@-webkit-keyframes fade-up {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  
+}
+ 
+.fade-up {
+    animation:fade-up 3000ms 1;
+    -webkit-animation:fade-up 500ms 1;
+}
+
+.main-bg-image { 
+background: url('images/bg.jpg');
+background-size: cover; }
+
+.main-page-img-container { 
+	margin-top: 4em;
+ }
+
+.site-container { 
+padding: 1em; }
+
+.animation-divs { 
+	width: 100%;
+	height: 100%;
+	transition: width 1s;
+ 		 
+ }
+
+.page.menu-checked {
+  height: 25vh;
+  width: 80vw;
+  margin-left: 10vw;
+background-color:rgba(255,255,255,.9); 
+  overflow-y: scroll;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
+.page { 
+display: none;
+ }
+
+
+ .page:nth-child(2) {
+ 	display: block;
+ }
+
+.text-content {
+top: 30vh;
+position: absolute;
+left: 2em;
+}
+  
+
+.blue-bg {
+    background-color: #2fb3cd;
+}
+
+.yellow-bg { 
+  background-color: #ffc107; 
+ }
+
+header { 
+display: flex;
+right: 1em;
+z-index: 1;
+cursor: pointer;
+
+ }
+
+nav { 
+
+
+ }
+
+
+ nav ul{
+ 	display: none;
+ }
+
+ nav .shown li {
+
+ 	border-right: 1px solid #ddd;
+ 	padding:0 1em;
+ 	padding: .8em 4em;
+ }
+
+  nav .shown li a { 
+  text-decoration: none; }
+
+
+
+ nav ul.shown {
+    display: inline-flex;
+    list-style: none;
+    position: fixed;
+    left: 9vw;
+    border-radius: 2px;
+    border:1px solid #ddd;
+   
+}
+
+.main-page-img-container { 
+min-height: 75vh; 
+	}
+
+ .main-page-img { 
+  	position: absolute;
+    bottom: 2vh;
+
+     }
+
+      .pg-title h2:after {
+  height: 8px;
+    width: 50px;
+    bottom: -15px;
+    left: 0;
+    right: 0;
+    position: absolute;
+    content: "";
+    z-index: 1;
+    transform: skew(-36deg);
+    -webkit-transform: skew(-36deg);
+    background: #ffc107!important;
+}
+
+
+
+
+
+/*CV-info-page*/
+
+.cv-info p {
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+.about-page div.about-img { 
+margin:auto 0; }
+
+.about-counter-row i {
+font-size: 2em; 
+color:#ffc107;
+ }
+
+ .about-counter-row span { 
+ font-size: 2em }
+
+
+/*resume-page*/
+
+.timeline-container { 
+list-style:none; }
+
+.head-box { 
+border-bottom: 1px solid #ddd; 
+}
+
+.head-box i  {	      
+    background-color: #ffc107;
+    padding: .7em;
+    border-radius: 100px;
+    font-size: 1.2em;
+}
+
+.head-box span { 
+	font-size: 1.1em;
+    font-weight: bold;
+ } 
+
+
+
+.timeline-container-row:after { 
+    position: absolute;
+    top: 10px;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    content: "";
+    border-left: 1px dashed #ddd;
+
+ }
+
+ .timeline-container-row h2:after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 6px;
+    left: -6px;
+    border-radius: 50%;
+    z-index: 1;
+    background-color: #ffc107;
+}
+
+ .timeline-container li:after {
+	content: "";
+    width: 25px;
+    height: 1px;
+    position: absolute;
+    top: 50px;
+    left: -40px;
+    border-top: 1px dashed #ddd;
+
+ }
+
+ .progress-left, .progress-right  {
+ 	position: relative;
+ }
+
+
+
+ .skills-percent-number {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+ .coding-skills .progress-bar { 
+ background-color: #ffc107;
+  }
+
+
+
+ 
+
+/*eof-resume-page*/
+
+/*responsive*/
+
+@media all and (max-width: 992px){
+ .col-user-image { 
+ display: none; 
+}
+
+.text-content { 
+max-width: 50%; 
+}
+
+.about-page div.about-img { 
+padding:0;
+margin:0;
+ }
+
+
+.text-content h1 { 
+font-size: 1.5em;
+ }
+
+ .main-page-img { 
+ position: static;
+  }
+
+.page.menu-checked {
+	height: 45vh;
+}
+  
+
+ .col-user-image {
+
+ 	display: none; 	
+ } 
+
+.col-user-image.mobile-image  { 
+display: block;
+min-height: 0!important;
+ }
+
+
+.about-page .d-flex { 
+flex-wrap: wrap;
+ }
+
+
+ .text-content { 
+ top:5vh; }
+}
+
+
+
+
+}
+
+/*eof-responsive
