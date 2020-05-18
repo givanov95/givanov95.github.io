@@ -322,8 +322,9 @@ border-bottom: 1px solid #ddd;
 
 .text-content { 
 max-width: 50%; 
-padding-left: 1em;
 padding-bottom: 4em;
+top:5vh; 
+
 }
 
 .about-page div.about-img { 
@@ -361,9 +362,7 @@ flex-wrap: wrap;
  }
 
 
- .text-content { 
- top:5vh; }
-}
+ 
 
 
 
