@@ -6,7 +6,7 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" href="profile.css">
+	<link rel="stylesheet" href="/profile.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
@@ -299,50 +299,8 @@
 </div> <!-- eof-site-container -->
 
 
-<script>
-	var pages = document.getElementsByClassName('page');
-	function menuOpener() {				
-		let transformPercents = 30;
-		
+<script src="/myjs.js">
 
-			for (var i = 0; i < pages.length; i++) {		
-			pages[i].style.display="inline-block";						
-			pages[i].classList.add(['menu-checked'], ['shadow-lg']);
-			pages[i].style.transform=" translate3d(0px,"+ transformPercents+"%, -200px)";
-			transformPercents-=(i+1)*30;		
-			pages[i].addEventListener("click", function(){
-
-				for (var z = 0; z < pages.length; z++) {
-					pages[z].classList.remove(['menu-checked'], ['shadow-lg']);
-					pages[z].style.transform="none";
-					pages[z].style.display="none";
-
-				}
-
-				this.style.display="block";
-				this.classList.add("animation-divs")
-			
-			});
-
-		}
-	}
-
-	function hideModal(element) { 
-
-		element.parentElement.parentElement.parentElement.parentElement.style.display="none";
-
-	}
-
-	function openModal() {
-		document.getElementsByClassName('modal')[0].style.display="block";
-
-		document.getElementsByClassName('modal')[0].classList.add('fade-up');
-
-
-	}
-
-
-	
 </script>
 
 </body>
