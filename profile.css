@@ -101,6 +101,24 @@ font-size: 2em;
      
  }
 
+ .underline {
+   text-decoration: none; 
+   position: relative; 
+ }   
+
+.underline:after {
+    position: absolute;
+    height: 2px;
+    margin: 0 auto;
+    content: '';
+    left: 0;
+    right: 0;
+    width: 70%;
+    color: #000;
+    background-color: #ffc107;    left: 0;
+    bottom: -5px; /* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
+}
+
 .main-bg-image { 
 background: url('images/bg.jpg');
 background-size: cover; }
@@ -323,6 +341,11 @@ border-bottom: 1px solid #ddd;
 /*responsive*/
 
 @media all and (max-width: 992px){
+  
+   header {
+    font-size: 1em;
+   }
+  
 
   .menu-opened { 
   width: 100%;
