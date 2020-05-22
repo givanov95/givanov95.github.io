@@ -6,7 +6,7 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" href="/givanov95.github.io/profile.css">
+	<link rel="stylesheet" href="/profile.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
@@ -15,28 +15,31 @@
 <body>
 
 	<div class="site-container">
-	<header id="menu" onclick="menuOpener();" class="bg-warning rounded position-absolute px-5">
-
-		<div class="menu-container d-flex ">
-			<div class="menu h3 pr-3">MENU</div>
-			<div class="menu-toggle h5">
-				<svg class="bi bi-list" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-					<path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 013 11h10a.5.5 0 010 1H3a.5.5 0 01-.5-.5zm0-4A.5.5 0 013 7h10a.5.5 0 010 1H3a.5.5 0 01-.5-.5zm0-4A.5.5 0 013 3h10a.5.5 0 010 1H3a.5.5 0 01-.5-.5z" clip-rule="evenodd"/>
-				</svg>
-
+	<header id="menu">
+		<div class="text-center">
+			<div class="d-flex float-right mr-1 p-2 js--menuOpener yellow-bg rounded shadow">
+			<div class="menu px-3">MENU</div>
+			<div class="menu-toggle">
+				<i class="fas fa-bars"></i>
 			</div>
+		</div>
+			<ul class="menu-container">
+				<li><span>HOME</span></li>
+				<li><span>ABOUT</span></li>
+				<li><span>RESUME</span></li>
+			</ul>		
 		
 		</div>
-	</header>
+	</header> 	<!-- eof header -->
 
-	<!-- eof header -->
+
 
 	<!-- main-page -->
-	<div id="HOME" class="page main-page">
+	<div id="HOME" class="page main-page animation-divs">
 		<div class="title-section">
 			<h6 class="bg-warning w-25 text-center py-3 rounded-right shadow">HOME</h6>
 			<div class="pg-title position-relative">
-				<h2 class="text-dark my-5 font-weight-bold">HOME</h2>
+				<h2 class="text-dark my-5">HOME</h2>
 			</div>
 		</div>
 		<div class="row no-gutters full-screen">
@@ -51,9 +54,9 @@
 				</div>
 			</div>	
 		</div>
-	</div>
+	</div> <!-- eof main-page -->
 	
-	<!-- eof main-page -->
+	
 
 	<!-- about-page -->
 
@@ -131,10 +134,10 @@
 				
 
 				
-			</div>
+			</div> <!-- eof-about-page -->
 	
 
-	<!-- eof-about-page -->
+	
 
 	<!-- Reusme  -->
 
@@ -295,7 +298,7 @@
 </div> <!-- eof-site-container -->
 
 
-<script src="/givanov95.github.io/myjs.js">
+<script src="/myjs.js">
 
 </script>
 
