@@ -3,10 +3,12 @@
 	const pages = document.getElementsByClassName('page');
 	const menuContainer = document.querySelector('.menu-container');
 	const menuNames = document.querySelectorAll('.menu-container span');
+	let underlined=menuNames[0];
 
 			for (let i = 0; i < menuNames.length; i++) {
 				menuNames[i].addEventListener("click", function(event){
-				
+
+				underlined=this;
 				let thisElement = document.getElementById(this.innerHTML);
 			
 			for (var z = 0; z < pages.length; z++) {
@@ -29,21 +31,27 @@
 
 
 
-			let transformPercents = 30;	
-				
+			let transformPercents;
+			if(screen.width>900) {transformPercents = 30;}
+			else { 
+			transformPercents = 10;
+				}	
 
 			menuContainer.classList.add("menu-opened");
 
 			for (let i = 0; i < pages.length; i++) {
-			if(pages[i].style.display="inline-block"){ 
-				
-			}
+			
+				if(menuNames[i].classList.contains('underline')) {
+				menuNames[i].classList.remove("underline");
+				}
+
+				underlined.classList.add("underline");
+
 				
 			pages[i].style.display="inline-block";						
 			pages[i].classList.add(['menu-checked'], ['shadow-lg']);
 			pages[i].style.transform=" translate3d(0px,"+ transformPercents+"%, -200px)";
-			transformPercents-=(i+1)*30+(20*i);	
-			
+			transformPercents-=(i+1)*30+(20*i);				
 
 			pages[i].addEventListener("click", function(){
 				for (var z = 0; z < pages.length; z++) {
