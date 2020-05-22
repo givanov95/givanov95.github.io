@@ -323,11 +323,6 @@ border-bottom: 1px solid #ddd;
 /*responsive*/
 
 @media all and (max-width: 992px){
-  
-   header {
-    font-size: 1em;
-   }
-  
 
   .menu-opened { 
   width: 100%;
