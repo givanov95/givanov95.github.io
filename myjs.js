@@ -32,6 +32,7 @@
 
 
 			let transformPercents;
+			let transformX=0;
 			if(screen.width>900) {transformPercents = 30;}
 			else { 
 			transformPercents = 10;
@@ -50,8 +51,9 @@
 				
 			pages[i].style.display="inline-block";						
 			pages[i].classList.add(['menu-checked'], ['shadow-lg']);
-			pages[i].style.transform=" translate3d(0px,"+ transformPercents+"%, -200px)";
-			transformPercents-= 50;				
+			pages[i].style.transform=" translate3d(transformX+"px","+ transformPercents+"%, -200px)";
+			transformPercents-= 50;
+			transformX+=20;
 
 			pages[i].addEventListener("click", function(){
 				for (var z = 0; z < pages.length; z++) {
