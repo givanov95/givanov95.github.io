@@ -51,7 +51,7 @@
 			pages[i].style.display="inline-block";						
 			pages[i].classList.add(['menu-checked'], ['shadow-lg']);
 			pages[i].style.transform=" translate3d(0px,"+ transformPercents+"%, -200px)";
-			transformPercents-=(i+1)*30+(20*i);				
+			transformPercents-= 50;				
 
 			pages[i].addEventListener("click", function(){
 				for (var z = 0; z < pages.length; z++) {
