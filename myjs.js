@@ -51,7 +51,7 @@
 				
 			pages[i].style.display="inline-block";						
 			pages[i].classList.add(['menu-checked'], ['shadow-lg']);
-			pages[i].style.transform=" translate3d(transformX+"px","+ transformPercents+"%, -200px)";
+			pages[i].style.transform=" translate3d(transformX+"px,"+ transformPercents+"%, -200px)";
 			transformPercents-= 50;
 			transformX+=20;
 
