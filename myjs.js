@@ -3,6 +3,7 @@
 	const pages = document.getElementsByClassName('page');
 	const menuContainer = document.querySelector('.menu-container');
 	const menuNames = document.querySelectorAll('.menu-container span');
+	const menuShown  = document.querySelector(".menu-shown");
 	let underlined=menuNames[0];
 
 			for (let i = 0; i < menuNames.length; i++) {
@@ -31,7 +32,7 @@
 
 			let transformPercents;
 			let transformX=0;		
-			let menuShown  = document.querySelector("menu-shown");
+			
 		
 // 		show the tap text 
 			menuShown.style.display="block";
