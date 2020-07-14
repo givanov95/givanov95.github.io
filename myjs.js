@@ -29,10 +29,13 @@
 
 	menuOpener.addEventListener("click", function(){
 
-
-
 			let transformPercents;
-			let transformX=0;
+			let transformX=0;		
+			let menuShown  = document.querySelector("menu-shown");
+		
+// 		show the tap text 
+			menuShown.style.display="block";
+		
 			if(screen.width>900) {transformPercents = 30;}
 			else { 
 			transformPercents = 10;
@@ -62,7 +65,7 @@
 					pages[z].style.display="none";
 
 				}
-
+				menuShown.style.display="none";
 				this.style.display="block";			
 				menuContainer.classList.remove("menu-opened");
 				this.classList.add("animation-divs");
