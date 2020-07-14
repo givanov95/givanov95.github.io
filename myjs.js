@@ -12,7 +12,7 @@
 				let thisElement = document.getElementById(this.innerHTML);
 			
 			for (var z = 0; z < pages.length; z++) {
-					pages[z].classList.remove(['menu-checked'], ['the.shadow']);
+					pages[z].classList.remove(['menu-checked'], ['the-shadow']);
 					pages[z].style.transform="none";
 					pages[z].style.display="none";
 
@@ -50,7 +50,7 @@
 
 				
 			pages[i].style.display="inline-block";						
-			pages[i].classList.add(['menu-checked'], ['shadow-lg']);
+			pages[i].classList.add(['menu-checked'], ['the-shadow']);
 			pages[i].style.transform=" translate3d("+transformX+"px,"+transformPercents+"%, -200px) rotateY(60deg)";
 			transformPercents-= 80;
 			transformX+=20;
