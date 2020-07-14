@@ -11,6 +11,8 @@
 
 				underlined=this;
 				let thisElement = document.getElementById(this.innerHTML);
+// 				hiding the text click 
+				menuShown.style.display="none";
 			
 			for (var z = 0; z < pages.length; z++) {
 					pages[z].classList.remove(['menu-checked'], ['the-shadow']);
@@ -31,8 +33,7 @@
 	menuOpener.addEventListener("click", function(){
 
 			let transformPercents;
-			let transformX=0;		
-			
+			let transformX=0;			
 		
 // 		show the tap text 
 			menuShown.style.display="block";
