@@ -56,7 +56,7 @@
 				
 			pages[i].style.display="inline-block";						
 			pages[i].classList.add(['menu-checked'], ['the-shadow']);
-			pages[i].style.transform=" translate3d("+transformX+"px,"+transformPercents+"%, -200px) rotateY(45deg)";
+			pages[i].style.transform=" translate3d("+transformX+"px,"+transformPercents+"%, -200px)";
 			transformPercents-= 80;
 			transformX+=20;
 
