@@ -3,7 +3,6 @@
 	const pages = document.getElementsByClassName('page');
 	const menuContainer = document.querySelector('.menu-container');
 	const menuNames = document.querySelectorAll('.menu-container span');
-	const menuShown  = document.querySelector(".menu-shown");
 	let underlined=menuNames[0];
 
 			for (let i = 0; i < menuNames.length; i++) {
@@ -11,8 +10,6 @@
 
 				underlined=this;
 				let thisElement = document.getElementById(this.innerHTML);
-// 				hiding the text click 
-				menuShown.style.display="none";
 			
 			for (var z = 0; z < pages.length; z++) {
 					pages[z].classList.remove(['menu-checked'], ['the-shadow']);
@@ -35,9 +32,6 @@
 			let transformPercents;
 			let transformX=0;			
 		
-// 		show the tap text 
-			menuShown.style.display="block";
-		
 			if(screen.width>900) {transformPercents = 30;}
 			else { 
 			transformPercents = 10;
@@ -51,28 +45,41 @@
 				menuNames[i].classList.remove("underline");
 				}
 
-				underlined.classList.add("underline");
-
-				
+			underlined.classList.add("underline");				
 			pages[i].style.display="inline-block";						
 			pages[i].classList.add(['menu-checked'], ['the-shadow']);
 			pages[i].style.transform=" translate3d("+transformX+"px,"+transformPercents+"%, -200px) skewY(-1deg)";
 			transformPercents-= 80;
 			transformX+=20;
 
-			pages[i].addEventListener("click", function(){
+			pages[i].addEventListener("click", pageOpen);
+			pages[i].addEventListener("scroll", pageScrollOpen);
+
+			function pageScrollOpen(e) { 
+				let thisPage = e.currentTarget;
+				let pageOffset = thisPage.scrollTop;
+				if(pageOffset > 300) {					
+					for (var z = 0; z < pages.length; z++) {
+						pages[z].classList.remove(['menu-checked'], ['the-shadow']);
+						pages[z].style.transform="none";
+						pages[z].style.display="none";
+					}
+				thisPage.style.display="block";			
+				menuContainer.classList.remove("menu-opened");
+				thisPage.classList.add("animation-divs");
+				}
+			}
+			function pageOpen(){
 				for (var z = 0; z < pages.length; z++) {
 					pages[z].classList.remove(['menu-checked'], ['the-shadow']);
 					pages[z].style.transform="none";
 					pages[z].style.display="none";
-
 				}
-				menuShown.style.display="none";
 				this.style.display="block";			
 				menuContainer.classList.remove("menu-opened");
 				this.classList.add("animation-divs");
 			
-			});
+			}
 
 
 		}
