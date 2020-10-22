@@ -36,6 +36,7 @@
 			else { 
 			transformPercents = 10;
 				}	
+			
 
 			menuContainer.classList.add("menu-opened");
 
