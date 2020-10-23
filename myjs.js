@@ -55,21 +55,7 @@
 
 			pages[i].addEventListener("click", pageOpen);
 			pages[i].addEventListener("scroll", pageScrollOpen);
-
-			function pageScrollOpen(e) { 
-				let thisPage = e.currentTarget;
-				let pageOffset = thisPage.scrollTop;
-				if(pageOffset > 300) {					
-					for (var z = 0; z < pages.length; z++) {
-						pages[z].classList.remove(['menu-checked'], ['the-shadow']);
-						pages[z].style.transform="none";
-						pages[z].style.display="none";
-					}
-				thisPage.style.display="block";			
-				menuContainer.classList.remove("menu-opened");
-				thisPage.classList.add("animation-divs");
-				}
-			}
+			
 			function pageOpen(){
 				for (var z = 0; z < pages.length; z++) {
 					pages[z].classList.remove(['menu-checked'], ['the-shadow']);
@@ -85,6 +71,21 @@
 
 		}
 	});	
+
+	function pageScrollOpen(e) { 
+		let thisPage = e.currentTarget;
+		let pageOffset = thisPage.scrollTop
+		if(pageOffset > 300) {					
+			for (var z = 0; z < pages.length; z++) {
+				pages[z].classList.remove(['menu-checked'], ['the-shadow']);
+				pages[z].style.transform="none";
+				pages[z].style.display="none";
+			}
+		thisPage.style.display="block";			
+		menuContainer.classList.remove("menu-opened");
+		thisPage.classList.add("animation-divs");
+		}
+	}
 
 	function hideModal(element) { 
 

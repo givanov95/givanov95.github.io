@@ -419,7 +419,7 @@ font-size: 1.5em;
 
 
 .page.menu-checked {
-	height: 45vh;
+	height: 35vh;
 }
   
 
@@ -440,12 +440,11 @@ flex-wrap: wrap;
 }
 
 /* pages on large screen  */
-@media all and (min-width: 1440px){
+@media all and (min-width: 992px){
 	.page.menu-checked { 
-		width: 69vw;
-    		margin-left: 10vw;
-	}
-		
-  
-}
+    width: 50vw;
+    margin-left: 20vw;
+    height:45vh
+  }
+}	
 /*eof-responsive
