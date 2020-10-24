@@ -7,7 +7,7 @@
 	let underlinedElement = document.querySelector(".menu-container span.underline");
 	let lastScrollPoint = 0;
 
-	// attach the Events 
+	// attaching the Events 
 	for (let i = 0; i < menuNames.length; i++) {
 		menuNames[i].addEventListener("click", openCurrentPageWithMenuClick);
 		pages[i].addEventListener("click", pageClickOpen);
@@ -27,6 +27,7 @@
 			if(page.classList.contains("hidden")) {
 				page.classList.remove("hidden"); 
 			}
+			//appearing the divs one behind another 
 			transformPercents-= 80;
 			transformX+=20;			
 		}
@@ -34,7 +35,6 @@
 	
 	function expandCurrentPage(triggerelement) {
 		let trigger = triggerelement;
-		// the trigger must be set in the main function 
 		trigger.classList.remove("hidden");		
 		trigger.classList.add("animation-divs");
 		menuContainer.classList.remove("menu-opened");
