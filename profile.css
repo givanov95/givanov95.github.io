@@ -101,12 +101,12 @@ font-size: 2em;
      
  }
 
- .underline {
+ .underlined {
    text-decoration: none; 
    position: relative; 
  }   
 
-.underline:after {
+.underlined:after {
     position: absolute;
     height: 2px;
     margin: 0 auto;
@@ -119,7 +119,9 @@ font-size: 2em;
     bottom: -5px; /* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
 }
 
-
+.hidden {
+  display: none;
+}
 
 .main-bg-image { 
 background: url('images/bg.jpg');
@@ -196,15 +198,6 @@ box-shadow: -21px 5px 19px -2px rgba(0,0,0,0.75);
   display: none;
 }
 
-.page { 
-display: none;
- }
-
-
- .page:nth-child(2) {
- 	display: block;
- }
-
 .text-content {
 top: 30vh;
 position: absolute;
@@ -227,13 +220,6 @@ z-index: 1;
 cursor: pointer;
 
  }
-
-
-.main-page { 
-display:block;
-}
-
-
 
 .main-page-img-container { 
 min-height: 75vh; 
@@ -354,10 +340,6 @@ border-bottom: 1px solid #ddd;
  .coding-skills .progress-bar { 
  background-color: #ffc107;
   }
-
-
-
- 
 
 /*eof-resume-page*/
 
