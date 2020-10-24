@@ -7,26 +7,15 @@
 	let underlinedElement = document.querySelector(".menu-container span.underline");
 	let lastScrollPoint = 0;
 
-
+	// attaching the Events 
 	for (let i = 0; i < menuNames.length; i++) {
-		menuNames[i].addEventListener("click", openCurrentPageFromMenu);
+		menuNames[i].addEventListener("click", openCurrentPageWithMenuClick);
 		pages[i].addEventListener("click", pageClickOpen);
 		pages[i].addEventListener("scroll", pageScrollOpen);		
 	}
-		menuOpener.addEventListener("click", expandAllPages);
-
-	function openCurrentPageFromMenu(e){
-		let trigger = e.currentTarget;
-		let triggerParentIndex = [].slice.call(menuContainer.children).indexOf(trigger.parentElement);
-		pagesClose();
-		removeUndelinedItems();	
-		trigger.classList.add("underlined");	
-		pages[triggerParentIndex].classList.remove("hidden");
-		pages[triggerParentIndex].classList.add("animation-divs");
-		menuContainer.classList.remove("menu-opened");
-	}
-
-	function expandAllPages() {
+		menuOpener.addEventListener("click", expandAllPagesOnMenuClick);
+	// Functions
+	function expandAllPagesOnMenuClick() {
 		let transformX=0;		
 		let transformPercents = (screen.width > 900) ? 30:10;
 		menuContainer.classList.add("menu-opened");
@@ -38,13 +27,18 @@
 			if(page.classList.contains("hidden")) {
 				page.classList.remove("hidden"); 
 			}
+			//appearing the divs one behind another 
 			transformPercents-= 80;
-			transformX+=20;
-			
+			transformX+=20;			
 		}
 	}
-
-
+	
+	function expandCurrentPage(triggerelement) {
+		let trigger = triggerelement;
+		trigger.classList.remove("hidden");		
+		trigger.classList.add("animation-divs");
+		menuContainer.classList.remove("menu-opened");
+	}
 
 	function pagesClose() {
 		for(page of pages) {
@@ -54,40 +48,48 @@
 		}		
 	}
 
+	function openCurrentPageWithMenuClick(e){
+		let trigger = e.currentTarget;
+		let triggerParentIndex = [].slice.call(menuContainer.children).indexOf(trigger.parentElement);
+		let pageToExpand = pages[triggerParentIndex];
+		pagesClose();
+		removeUndelinedItems();	
+		trigger.classList.add("underlined");	
+		expandCurrentPage(pageToExpand);
+		menuContainer.classList.remove("menu-opened");
+	}
+
 	function pageClickOpen(e) {
 		trigger = e.currentTarget;
 		let triggerIndex = [].slice.call(pagesContainer.children).indexOf(trigger);
 		pagesClose();
 		removeUndelinedItems();	
+		// underline the item with index as expandig page 
 		menuNames[triggerIndex].classList.add("underlined");
-
-		trigger.classList.remove("hidden");		
-		menuContainer.classList.remove("menu-opened");
-		trigger.classList.add("animation-divs");
-			
+		// epand the clicked page 
+		expandCurrentPage(trigger);
 	}
 
-	function pageScrollOpen(e) { 	
-		let trigger = e.currentTarget;
+	function pageScrollOpen(e) {
+		let trigger = e.currentTarget;	
 		let triggerIndex = [].slice.call(pagesContainer.children).indexOf(trigger);		
 		let pageOffset = trigger.scrollTop;
 
-		if(pageOffset > 300 && lastScrollPoint < pageOffset ) {	
+		if(pageOffset > 300 && lastScrollPoint < pageOffset ) {				
 			pagesClose();	
-			trigger.classList.remove("hidden");		
-			menuContainer.classList.remove("menu-opened");
-			trigger.classList.add("animation-divs");
+			// expand the scrolled page if scroll > 300 		
+			expandCurrentPage(trigger);
 		}		
 		removeUndelinedItems();	
+		// underline the menu item with index as the opened page
 		menuNames[triggerIndex].classList.add("underlined");
+		// setting the last point of scroll 
 		lastScrollPoint = pageOffset;
 	}
 
 	function removeUndelinedItems() {
-		for( menuName of menuNames) {
-			if(menuName.classList.contains("underlined")){
-				menuName.classList.remove("underlined");
-			}
+		for( menuName of menuNames) {			
+			menuName.classList.remove("underlined");		
 		}
 	}
 
