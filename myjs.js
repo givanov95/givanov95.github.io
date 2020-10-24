@@ -7,15 +7,15 @@
 	let underlinedElement = document.querySelector(".menu-container span.underline");
 	let lastScrollPoint = 0;
 
-
+	// attach the Events 
 	for (let i = 0; i < menuNames.length; i++) {
-		menuNames[i].addEventListener("click", openCurrentPageFromMenu);
+		menuNames[i].addEventListener("click", openCurrentPageWithMenuClick);
 		pages[i].addEventListener("click", pageClickOpen);
 		pages[i].addEventListener("scroll", pageScrollOpen);		
 	}
 		menuOpener.addEventListener("click", expandAllPages);
-
-	function openCurrentPageFromMenu(e){
+	// Functions
+	function openCurrentPageWithMenuClick(e){
 		let trigger = e.currentTarget;
 		let triggerParentIndex = [].slice.call(menuContainer.children).indexOf(trigger.parentElement);
 		pagesClose();
@@ -39,12 +39,9 @@
 				page.classList.remove("hidden"); 
 			}
 			transformPercents-= 80;
-			transformX+=20;
-			
+			transformX+=20;			
 		}
 	}
-
-
 
 	function pagesClose() {
 		for(page of pages) {
@@ -59,27 +56,26 @@
 		let triggerIndex = [].slice.call(pagesContainer.children).indexOf(trigger);
 		pagesClose();
 		removeUndelinedItems();	
+		// underline the item with index as expandig page 
 		menuNames[triggerIndex].classList.add("underlined");
-
-		trigger.classList.remove("hidden");		
-		menuContainer.classList.remove("menu-opened");
-		trigger.classList.add("animation-divs");
-			
+		// epand the clicked page 
+		expandCurrentPage(trigger);
 	}
 
-	function pageScrollOpen(e) { 	
-		let trigger = e.currentTarget;
+	function pageScrollOpen(e) {
+		let trigger = e.currentTarget;	
 		let triggerIndex = [].slice.call(pagesContainer.children).indexOf(trigger);		
 		let pageOffset = trigger.scrollTop;
 
-		if(pageOffset > 300 && lastScrollPoint < pageOffset ) {	
+		if(pageOffset > 300 && lastScrollPoint < pageOffset ) {				
 			pagesClose();	
-			trigger.classList.remove("hidden");		
-			menuContainer.classList.remove("menu-opened");
-			trigger.classList.add("animation-divs");
+			// expand the scrolled page if scroll > 300 		
+			expandCurrentPage(trigger);
 		}		
 		removeUndelinedItems();	
+		// underline the menu item with index as the opened page
 		menuNames[triggerIndex].classList.add("underlined");
+		// setting the last point of scroll 
 		lastScrollPoint = pageOffset;
 	}
 
@@ -100,4 +96,12 @@
 		modal.style.display="block";
 		modal.classList.add('fade-up');
 
+	}
+
+	function expandCurrentPage(triggerelement) {
+		let trigger = triggerelement;
+		// the trigger must be set in the main function 
+		trigger.classList.remove("hidden");		
+		trigger.classList.add("animation-divs");
+		menuContainer.classList.remove("menu-opened");
 	}
