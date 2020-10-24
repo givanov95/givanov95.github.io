@@ -13,20 +13,9 @@
 		pages[i].addEventListener("click", pageClickOpen);
 		pages[i].addEventListener("scroll", pageScrollOpen);		
 	}
-		menuOpener.addEventListener("click", expandAllPages);
+		menuOpener.addEventListener("click", expandAllPagesOnMenuClick);
 	// Functions
-	function openCurrentPageWithMenuClick(e){
-		let trigger = e.currentTarget;
-		let triggerParentIndex = [].slice.call(menuContainer.children).indexOf(trigger.parentElement);
-		pagesClose();
-		removeUndelinedItems();	
-		trigger.classList.add("underlined");	
-		pages[triggerParentIndex].classList.remove("hidden");
-		pages[triggerParentIndex].classList.add("animation-divs");
-		menuContainer.classList.remove("menu-opened");
-	}
-
-	function expandAllPages() {
+	function expandAllPagesOnMenuClick() {
 		let transformX=0;		
 		let transformPercents = (screen.width > 900) ? 30:10;
 		menuContainer.classList.add("menu-opened");
@@ -42,6 +31,14 @@
 			transformX+=20;			
 		}
 	}
+	
+	function expandCurrentPage(triggerelement) {
+		let trigger = triggerelement;
+		// the trigger must be set in the main function 
+		trigger.classList.remove("hidden");		
+		trigger.classList.add("animation-divs");
+		menuContainer.classList.remove("menu-opened");
+	}
 
 	function pagesClose() {
 		for(page of pages) {
@@ -49,6 +46,17 @@
 			page.classList.add("hidden")
 			page.style.transform = "none";
 		}		
+	}
+
+	function openCurrentPageWithMenuClick(e){
+		let trigger = e.currentTarget;
+		let triggerParentIndex = [].slice.call(menuContainer.children).indexOf(trigger.parentElement);
+		let pageToExpand = pages[triggerParentIndex];
+		pagesClose();
+		removeUndelinedItems();	
+		trigger.classList.add("underlined");	
+		expandCurrentPage(pageToExpand);
+		menuContainer.classList.remove("menu-opened");
 	}
 
 	function pageClickOpen(e) {
@@ -80,10 +88,8 @@
 	}
 
 	function removeUndelinedItems() {
-		for( menuName of menuNames) {
-			if(menuName.classList.contains("underlined")){
-				menuName.classList.remove("underlined");
-			}
+		for( menuName of menuNames) {			
+			menuName.classList.remove("underlined");		
 		}
 	}
 
@@ -96,12 +102,4 @@
 		modal.style.display="block";
 		modal.classList.add('fade-up');
 
-	}
-
-	function expandCurrentPage(triggerelement) {
-		let trigger = triggerelement;
-		// the trigger must be set in the main function 
-		trigger.classList.remove("hidden");		
-		trigger.classList.add("animation-divs");
-		menuContainer.classList.remove("menu-opened");
 	}
