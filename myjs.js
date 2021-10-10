@@ -6,11 +6,15 @@
 	const menuNames = document.querySelectorAll('.menu-container span');
 	let underlinedElement = document.querySelector(".menu-container span.underline");
 	let lastScrollPoint = 0;
+	
+	if(location.hash.length > 0) {
+		openPage();
+	}
 
 	// attaching the Events 
 	for (let i = 0; i < menuNames.length; i++) {
 		menuNames[i].addEventListener("click", openCurrentPageWithMenuClick);
-		pages[i].addEventListener("click", pageClickOpen);
+		pages[i].addEventListener("click", openPage);
 		pages[i].addEventListener("scroll", pageScrollOpen);		
 	}
 		menuOpener.addEventListener("click", expandAllPagesOnMenuClick);
@@ -59,9 +63,19 @@
 		menuContainer.classList.remove("menu-opened");
 	}
 
-	function pageClickOpen(e) {
-		trigger = e.currentTarget;
+	function openPage(e) {
+		let trigger;
+		if(e) {
+			trigger = e.currentTarget;
+			
+		}else {
+			trigger = document.querySelector(location.hash);
+		}
+	
 		let triggerIndex = [].slice.call(pagesContainer.children).indexOf(trigger);
+		location.hash = trigger.id;
+	
+		// location.href = params;
 		pagesClose();
 		removeUndelinedItems();	
 		// underline the item with index as expandig page 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>GI Personal Page</title>
@@ -7,150 +8,163 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" href="/profile.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
 	<!-- site-container-->
 	<div class="site-container">
-	<!--  header -->
+		<!--  header -->
 		<header id="menu">
-		<div class="text-center">
-			<div class="d-flex float-right mr-1 p-2 js--menuOpener yellow-bg rounded shadow">
-			<div class="menu px-3">MENU</div>
-			<div class="menu-toggle">
-				<i class="fas fa-bars"></i>
-			</div>
-		</div>
-			<ul class="menu-container">
-				<li><span class="underlined">HOME</span></li>
-				<li><span>ABOUT</span></li>
-				<li><span>RESUME</span></li>
-			</ul>		
-		
-		</div>
-	</header> 	<!-- eof header -->
-
-
-	
-
-	<div class="pages-container">
-		<!-- main-page -->
-		<div id="HOME" class="page main-page animation-divs">
-			<div class="title-section">
-				<h6 class="bg-warning w-25 text-center py-3 rounded-right shadow">HOME</h6>
-				<div class="pg-title position-relative">
-					<h2 class="text-dark my-5">HOME</h2>
-				</div>
-			</div>
-			<div class="row no-gutters full-screen">
-				<div class="col col-12 col-lg-3 col-xl-3 blue-bg col-user-image mobile-image main-page-img-container responsive-change">
-					<img class="main-page-img" src="images/user.png" alt="">
-				</div>
-				<div class="col col-12 col-lg-9 col-xl-8 main-bg-image responsive-change ">
-					<div class="text-content">
-						<h1>Hello,</h1>
-						<h1 class="hello-text">I'm Georgi Ivanov </h1> 
-						<a href="javascript:" onclick="openModal()" class="btn btn-warning text-white font-weight-bold btn-lg shadow">Download CV</a>
+			<div class="text-center">
+				<div class="d-flex float-right mr-1 p-2 js--menuOpener yellow-bg rounded shadow">
+					<div class="menu px-3">MENU</div>
+					<div class="menu-toggle">
+						<i class="fas fa-bars"></i>
 					</div>
-				</div>	
-			</div>
-		</div> <!-- eof main-page -->
-		
-		
-
-		<!-- about-page -->
-
-		<div id="ABOUT" class="page page-content about-page hidden">
-			<div class="title-section">
-				<h6 class="bg-warning w-25 text-center py-3 rounded-right shadow">WHO I AM</h6>
-				<div class="pg-title position-relative">
-					<h2 class="text-dark my-5 font-weight-bold">ABOUT</h2>
 				</div>
+				<ul class="menu-container">
+					<li><span class="underlined">HOME</span></li>
+					<li><span>ABOUT</span></li>
+					<li><span>RESUME</span></li>
+				</ul>
+
 			</div>
+		</header> <!-- eof header -->
+
+
+
+
+		<div class="pages-container">
+			<!-- main-page -->
+			<div id="HOME" class="page main-page animation-divs">
+				<div class="title-section">
+					<h6 class="bg-warning w-25 text-center py-3 rounded-right shadow">HOME</h6>
+					<div class="pg-title position-relative">
+						<h2 class="text-dark my-5">HOME</h2>
+					</div>
+				</div>
+				<div class="row no-gutters full-screen">
+					<div
+						class="col col-12 col-lg-3 col-xl-3 blue-bg col-user-image mobile-image main-page-img-container responsive-change">
+						<img class="main-page-img" src="images/user.png" alt="">
+					</div>
+					<div class="col col-12 col-lg-9 col-xl-8 main-bg-image responsive-change ">
+						<div class="text-content">
+							<h1>Hello,</h1>
+							<h1 class="hello-text">I'm Georgi Ivanov </h1>
+							<a href="javascript:" onclick="openModal()"
+								class="btn btn-warning text-white font-weight-bold btn-lg shadow">Download CV</a>
+						</div>
+					</div>
+				</div>
+			</div> <!-- eof main-page -->
+
+
+
+			<!-- about-page -->
+
+			<div id="ABOUT" class="page page-content about-page hidden">
+				<div class="title-section">
+					<h6 class="bg-warning w-25 text-center py-3 rounded-right shadow">WHO I AM</h6>
+					<div class="pg-title position-relative">
+						<h2 class="text-dark my-5 font-weight-bold">ABOUT</h2>
+					</div>
+				</div>
 				<div class="row no-gutters full-screen">
 					<div class="col col-lg-3 col-xl-3 min-vh-80 col-user-image">
 						<img class="" src="images/progress.jpg" alt="">
 					</div>
 					<div class="col col-lg-9 col-xl-8 my-auto d-flex">
 						<div class="about-img mobile-image col col-12 col-lg-4 col-xl-3p-5">
-						<img src="images/laptop.jpg" alt="">
+							<img src="images/laptop.jpg" alt="">
 						</div>
-						<div class="col col-12 col-lg-8 col-xl-9 text-justify cv-info"><h2 class="mb-2">I'm Georgi Ivanov</h2>
-						<p class="shadow p-5">
-						Very ambitious, creative and quick-learning person with programming and time keeping skills.
-						Have some experience and knowledge in application development with  HTML5, CSS3 и responsive layouts, JavaScript (JSON), jQuery,Apache Cordova, .NET platform and many more. <br/>
-						Works with precision and a very good team player. Keen on keeping deadlines!
-						</p>
-						<h3>Hobbies and Interests</h3>
-						<p class="shadow p-5">
-						Playing footbal, travelling,  long walks on the beach, being in nature, reading and many more.						
-							
-						</p>					
+						<div class="col col-12 col-lg-8 col-xl-9 text-justify cv-info">
+							<h2 class="mb-2">I'm Georgi Ivanov</h2>
+							<p class="shadow p-5">
+								Very ambitious, creative and quick-learning person with programming and time keeping
+								skills.
+								Have some experience and knowledge in application development with HTML5, CSS3 и
+								responsive layouts, JavaScript (JSON), jQuery,Apache Cordova, .NET platform and many
+								more. <br />
+								Works with precision and a very good team player. Keen on keeping deadlines!
+							</p>
+							<h3>Hobbies and Interests</h3>
+							<p class="shadow p-5">
+								Playing footbal, travelling, long walks on the beach, being in nature, reading and many
+								more.
 
-						<div class="col-12 d-flex">
-							<a href="javascript:" onclick="openModal()" class="btn btn-warning text-white font-weight-bold btn-lg ml-1 shadow mt-2">Download CV</a>
-							<a href="https://github.com/givanov95" class="btn btn-warning text-white font-weight-bold btn-lg ml-1 shadow mt-2">GitHub</a>
-							<a href="https://www.linkedin.com/in/georgi-ivanov-5a7a7b172/" class="btn btn-warning text-white font-weight-bold btn-lg ml-1 shadow mt-2">LinkedIn</a>
-						</div>	
-						</div>			
-							
+							</p>
+
+							<div class="col-12 d-flex">
+								<a href="javascript:" onclick="openModal()"
+									class="btn btn-warning text-white font-weight-bold btn-lg ml-1 shadow mt-2">Download
+									CV</a>
+								<a href="https://github.com/givanov95"
+									class="btn btn-warning text-white font-weight-bold btn-lg ml-1 shadow mt-2">GitHub</a>
+								<a href="https://www.linkedin.com/in/georgi-ivanov-5a7a7b172/"
+									class="btn btn-warning text-white font-weight-bold btn-lg ml-1 shadow mt-2">LinkedIn</a>
+							</div>
 						</div>
 
 					</div>
 
-					<hr style="width: 80%; margin:2em auto" />
-
-					<div class="container">
-						<div class="row my-5 about-counter-row">
-									<div class="col-12 col-md-3">
-								<i class="fas fa-users"></i>
-								<span class="font-weight-bold">1000%</span>
-								<small class="d-block pl-5">TEAM PLAYER</small>
-							</div>
-
-							<div class="col-12 col-md-3 ">
-								<i class="fas fa-laptop-code"></i>
-								<span class="font-weight-bold">10+</span>
-								<small class="d-block pl-5">SIMPLE PROJECTS DONE</small>
-							</div>
-
-
-							<div class="col-12 col-md-3 ">
-								<i class="fas fa-lightbulb"></i>
-								<span class="font-weight-bold">83%</span>
-								<small class="d-block pl-4">CREATIVITY</small>
-							</div>
-
-								<div class="col-12 col-md-3 ">
-								<i class="fas fa-user-friends"></i>
-								<span class="font-weight-bold">100%</span>
-								<small class="d-block pl-5">FRIENDLY PERSONALITY</small>
-							</div>
-
-							
-							
-						</div>
-					</div>
-					
-
-					
-				</div> <!-- eof-about-page -->
-		
-
-		
-
-		<!-- Reusme  -->
-
-	<div id="RESUME" class="page page-content resume-page hidden">
-			<div class="title-section">
-				<h6 class="bg-warning w-25 text-center py-3 rounded-right shadow">HISTORY</h6>
-				<div class="pg-title position-relative">
-					<h2 class="text-dark my-5 font-weight-bold">MY RESUME</h2>
 				</div>
-			</div>
+
+				<hr style="width: 80%; margin:2em auto" />
+
+				<div class="container">
+					<div class="row my-5 about-counter-row">
+						<div class="col-12 col-md-3">
+							<i class="fas fa-users"></i>
+							<span class="font-weight-bold">1000%</span>
+							<small class="d-block pl-5">TEAM PLAYER</small>
+						</div>
+
+						<div class="col-12 col-md-3 ">
+							<i class="fas fa-laptop-code"></i>
+							<span class="font-weight-bold">10+</span>
+							<small class="d-block pl-5">PROJECTS DONE</small>
+						</div>
+
+
+						<div class="col-12 col-md-3 ">
+							<i class="fas fa-lightbulb"></i>
+							<span class="font-weight-bold">83%</span>
+							<small class="d-block pl-4">CREATIVITY</small>
+						</div>
+
+						<div class="col-12 col-md-3 ">
+							<i class="fas fa-user-friends"></i>
+							<span class="font-weight-bold">100%</span>
+							<small class="d-block pl-5">FRIENDLY PERSONALITY</small>
+						</div>
+
+
+
+					</div>
+				</div>
+
+
+
+			</div> <!-- eof-about-page -->
+
+
+
+
+			<!-- Reusme  -->
+
+			<div id="RESUME" class="page page-content resume-page hidden">
+				<div class="title-section">
+					<h6 class="bg-warning w-25 text-center py-3 rounded-right shadow">HISTORY</h6>
+					<div class="pg-title position-relative">
+						<h2 class="text-dark my-5 font-weight-bold">MY RESUME</h2>
+					</div>
+				</div>
 				<div class="row no-gutters full-screen">
 					<div class="col col-lg-3 col-xl-3 min-vh-80 col-user-image">
 						<img class="" src="images/projects.jpg" alt="">
@@ -158,7 +172,7 @@
 					<div class="col col-lg-9 col-xl-8 m-5 ">
 						<div class="timeline-container-row">
 							<h2 class="ml-5">Education and Experience</h2>
-							<ul class="timeline-container ml-5">	
+							<ul class="timeline-container ml-5">
 
 								<li class="shadow position-relative my-5">
 									<div class="head-box p-5">
@@ -194,7 +208,7 @@
 									<div class="bottom-box p-5">
 										<p>Junior Wordpress Developer for web developing company in Varna, Bulgaria.</p>
 									</div>
-								</li>	
+								</li>
 
 								<li class="shadow position-relative my-5">
 									<div class="head-box p-5">
@@ -219,132 +233,191 @@
 										<p>Bachelor's Degree in Computer Science</p>
 									</div>
 								</li>
-							</ul>						
+							</ul>
 						</div><!-- eof-timeline-container -->
 					</div>
 					<div class="coding-skills col-12">
-							<div class="pg-title position-relative">
-								<h2 class="text-dark my-5 font-weight-bold">Coding skills</h2>
-							</div>
-							
+						<div class="pg-title position-relative">
+							<h2 class="text-dark my-5 font-weight-bold">Coding skills</h2>
+						</div>
+
 						<div class="col-sm-6 d-inline-block">
 							<div class="progress-left">
 								<h6>HTML</h6>
-									<span class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">95%</span>
-									<div class="progress">
-										<div class="progress-bar " style="width: 85%">
-										</div>                                                      
+								<span
+									class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">95%</span>
+								<div class="progress">
+									<div class="progress-bar " style="width: 95%">
 									</div>
-							</div>   <!-- /progress-bar -->
+								</div>
+							</div> <!-- /progress-bar -->
 
-							
-							<div class="progress-left mt-5">
-								<h6>CSS</h6>
-									<span class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">89%</span>
-									<div class="progress">
-										<div class="progress-bar " style="width: 74%">
-										</div>                                                      
-									</div>
-							</div>   <!-- /progress-bar -->
 
 							<div class="progress-left mt-5">
-								<h6>Javascript</h6>
-									<span class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">78%</span>
-									<div class="progress">
-										<div class="progress-bar " style="width: 62%">
-										</div>                                                      
+								<h6>CSS/SCSS</h6>
+								<span
+									class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">85%</span>
+								<div class="progress">
+									<div class="progress-bar " style="width: 85%">
 									</div>
-							</div>   <!-- /progress-bar -->
+								</div>
+							</div> <!-- /progress-bar -->
+
+							<div class="progress-left mt-5">
+								<h6>Javascript/JSON</h6>
+								<span
+									class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">92%</span>
+								<div class="progress">
+									<div class="progress-bar " style="width: 92%">
+									</div>
+								</div>
+							</div> <!-- /progress-bar -->
 
 
 							<div class="progress-left mt-5">
 								<h6>Jquery</h6>
-									<span class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">62%</span>
-									<div class="progress">
-										<div class="progress-bar " style="width: 48%">
-										</div>                                                      
+								<span
+									class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">62%</span>
+								<div class="progress">
+									<div class="progress-bar " style="width: 62%">
 									</div>
-							</div>   <!-- /progress-bar -->
-							
+								</div>
+							</div> <!-- /progress-bar -->
+
 						</div>
 
 						<div class="col-sm-6 d-inline-block float-right">
 
 							<div class="progress-right">
 								<h6>.NET Core</h6>
-									<span class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">37%</span>
-									<div class="progress">
-										<div class="progress-bar " style="width: 37%">
-										</div>                                                      
+								<span
+									class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">20%</span>
+								<div class="progress">
+									<div class="progress-bar " style="width: 20%">
 									</div>
-							</div>   <!-- /progress-bar -->
+								</div>
+							</div> <!-- /progress-bar -->
 
 
 
 							<div class="progress-right mt-5">
 								<h6>PHP</h6>
-									<span class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">65%</span>
-									<div class="progress">
-										<div class="progress-bar " style="width: 24%">
-										</div>                                                      
+								<span
+									class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">95%</span>
+								<div class="progress">
+									<div class="progress-bar " style="width: 95%">
 									</div>
-							</div>   <!-- /progress-bar -->
+								</div>
+							</div> <!-- /progress-bar -->
 
-								<div class="progress-right mt-5">
+							<div class="progress-right mt-5">
 								<h6>CMS and Frameworks</h6>
-									<span class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">80%</span>
-									<div class="progress">
-										<div class="progress-bar " style="width: 18%">
-										</div>                                                      
+								<span
+									class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">90%</span>
+								<div class="progress">
+									<div class="progress-bar " style="width: 90%">
 									</div>
-							</div>   <!-- /progress-bar -->
+								</div>
+							</div> <!-- /progress-bar -->
 
-								<div class="progress-right mt-5">
+							<div class="progress-right mt-5">
 								<h6>AJAX</h6>
-									<span class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">75%</span>
-									<div class="progress">
-										<div class="progress-bar " style="width: 12%">
-										</div>                                                      
+								<span
+									class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">95%</span>
+								<div class="progress">
+									<div class="progress-bar " style="width: 95%">
 									</div>
-							</div>   <!-- /progress-bar -->
+								</div>
+							</div> <!-- /progress-bar -->
 
 						</div>
+
+						<div class="col-sm-6 d-inline-block mt-4 float-left">
+							<div class="progress-left">
+								<h6>Laravel</h6>
+								<span
+									class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">78%</span>
+								<div class="progress">
+									<div class="progress-bar" style="width: 78%">
+									</div>
+								</div>
+							</div> <!-- /progress-bar -->
+						</div>
+
+						<div class="col-sm-6 d-inline-block mt-4 float-right">
+							<div class="progress-left">
+								<h6>Next.js</h6>
+								<span
+									class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">0%</span>
+								<div class="progress">
+									<div class="progress-bar" style="width: 0%">
+									</div>
+								</div>
+							</div> <!-- /progress-bar -->
+						</div>
+
+						<div class="col-sm-6 d-inline-block mt-4 float-left">
+							<div class="progress-left">
+								<h6>React</h6>
+								<span
+									class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">0%</span>
+								<div class="progress">
+									<div class="progress-bar" style="width: 0%">
+									</div>
+								</div>
+							</div> <!-- /progress-bar -->
+						</div>
+
+						<div class="col-sm-6 d-inline-block mt-4 float-right">
+							<div class="progress-left">
+								<h6>Redux</h6>
+								<span
+									class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">0%</span>
+								<div class="progress">
+									<div class="progress-bar" style="width: 0%">
+									</div>
+								</div>
+							</div> <!-- /progress-bar -->
+						</div>
+
 					</div>
 				</div>
 			</div>
-	</div>
 
 
-	<!-- --modal -->
-	<div class="modal fade show shadow-lg" id="choiceVersion" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-modal="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="modalLabel">Изберете езикова версия на CV</h5>
-			<a href="javascript:" class="close" type="button" data-dismiss="modal" aria-label="Close" onclick="hideModal(this)">×</a>
-	</div>
-	<div class="modal-body">
-		<strong>Please choice language version of CV</strong>
-	</div>
-	<div class="modal-footer">
-		<a href="/cv/resume-en.pdf" class="btn btn-primary">RESUME EN</a>
-		<a href="/cv/resume-bg.pdf" class="btn btn-primary">RESUME BG</a>
-		<a href="/cv/cv-bg.pdf" class="btn btn-success">CV BG</a>
-		<a href="/cv/cv-en.pdf" class="btn btn-danger">CV EN</a>
-	</div>
-</div>
-</div>
-</div>	<!-- --eof modal -->
-	
-
-	<!-- eof-resume-page -->
-
-</div> <!-- eof-site-container -->
+			<!-- --modal -->
+			<div class="modal fade show shadow-lg" id="choiceVersion" tabindex="-1" role="dialog"
+				aria-labelledby="modalLabel" aria-modal="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="modalLabel">Изберете езикова версия на CV</h5>
+							<a href="javascript:" class="close" type="button" data-dismiss="modal" aria-label="Close"
+								onclick="hideModal(this)">×</a>
+						</div>
+						<div class="modal-body">
+							<strong>Please choice language version of CV</strong>
+						</div>
+						<div class="modal-footer">
+							<a href="/cv/resume-en.pdf" class="btn btn-primary">RESUME EN</a>
+							<a href="/cv/resume-bg.pdf" class="btn btn-primary">RESUME BG</a>
+							<a href="/cv/cv-bg.pdf" class="btn btn-success">CV BG</a>
+							<a href="/cv/cv-en.pdf" class="btn btn-danger">CV EN</a>
+						</div>
+					</div>
+				</div>
+			</div> <!-- --eof modal -->
 
 
-<script src="/myjs.js">
+			<!-- eof-resume-page -->
 
-</script>
+		</div> <!-- eof-site-container -->
+
+
+		<script src="/myjs.js">
+
+		</script>
 
 </body>
+
 </html>
