@@ -1,0 +1,116 @@
+/* ============================================================
+   Custom styles on top of Tailwind (Play CDN).
+   Only things Tailwind utilities don't cover cleanly:
+   animations, decorative background, reusable chips, reveal.
+   Light theme.
+   ============================================================ */
+
+/* Anti-FOUC: keep the page light before Tailwind's CDN loads */
+html { background: #ffffff; scroll-behavior: smooth; }
+body { min-height: 100vh; }
+
+/* Nicer light scrollbar */
+* { scrollbar-width: thin; scrollbar-color: #cbd5e1 transparent; }
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 99px; }
+*::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* Decorative grid background (faint slate lines) */
+.grid-bg {
+	background-image:
+		linear-gradient(to right, #0f172a 1px, transparent 1px),
+		linear-gradient(to bottom, #0f172a 1px, transparent 1px);
+	background-size: 56px 56px;
+	opacity: 0.035;
+	mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 100%);
+	-webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 100%);
+}
+
+/* Slowly drifting glow blobs */
+.glow-blob { animation: float 14s ease-in-out infinite; }
+.glow-blob:nth-child(3) { animation-delay: -7s; }
+@keyframes float {
+	0%, 100% { transform: translate(-50%, 0) scale(1); }
+	50%      { transform: translate(-50%, 40px) scale(1.08); }
+}
+
+/* Typing cursor */
+.type-cursor {
+	color: #0891b2;
+	animation: blink 1s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Skill / tech chips */
+.chip {
+	font-family: 'JetBrains Mono', ui-monospace, monospace;
+	font-size: 0.8rem;
+	color: #334155;
+	background: #f8fafc;
+	border: 1px solid #e2e8f0;
+	border-radius: 0.5rem;
+	padding: 0.3rem 0.7rem;
+	transition: border-color .2s, color .2s, background .2s;
+}
+.chip:hover { color: #0f172a; border-color: #c4b5fd; background: #faf5ff; }
+
+.chip-sm {
+	font-family: 'JetBrains Mono', ui-monospace, monospace;
+	border: 1px solid #e2e8f0;
+	border-radius: 0.375rem;
+	padding: 0.15rem 0.5rem;
+}
+
+/* CV modal buttons */
+.cv-btn {
+	display: block;
+	text-align: center;
+	font-weight: 600;
+	color: #334155;
+	background: #f8fafc;
+	border: 1px solid #e2e8f0;
+	border-radius: 0.75rem;
+	padding: 0.85rem 1rem;
+	transition: border-color .2s, background .2s, transform .15s;
+}
+.cv-btn:hover { border-color: #cbd5e1; background: #f1f5f9; transform: translateY(-2px); }
+
+/* Timeline dot */
+.timeline-item { position: relative; }
+.timeline-item::before {
+	content: "";
+	position: absolute;
+	left: -2.06rem;
+	top: 0.35rem;
+	width: 0.7rem;
+	height: 0.7rem;
+	border-radius: 99px;
+	background: linear-gradient(135deg, #7c3aed, #06b6d4);
+	box-shadow: 0 0 0 4px #ffffff;
+}
+
+/* Scroll-reveal — only hide when JS is present (progressive enhancement) */
+html.js .reveal {
+	opacity: 0;
+	transform: translateY(24px);
+	transition: opacity .7s ease, transform .7s ease;
+}
+html.js .reveal.in-view { opacity: 1; transform: none; }
+
+/* Active nav link */
+.nav-link.active { color: #0f172a; }
+.nav-link.active::after {
+	content: "";
+	display: block;
+	height: 2px;
+	margin-top: 2px;
+	border-radius: 99px;
+	background: linear-gradient(90deg, #7c3aed, #06b6d4);
+}
+
+/* Respect reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+	.glow-blob, .type-cursor { animation: none; }
+	html.js .reveal { opacity: 1; transform: none; transition: none; }
+	html { scroll-behavior: auto; }
+}
