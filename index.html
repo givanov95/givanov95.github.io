@@ -3,421 +3,468 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>GI Personal Page</title>
-
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Georgi Ivanov — Full-Stack Web Developer</title>
+	<meta name="description"
+		content="Georgi Ivanov — full-stack web developer from Varna, Bulgaria. Building production web apps with Laravel, NestJS, Vue and Next.js.">
 
-	<link rel="stylesheet" href="/profile.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
+	<!-- Social sharing -->
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Georgi Ivanov — Full-Stack Web Developer">
+	<meta property="og:description"
+		content="Building production web apps with Laravel, NestJS, Vue and Next.js.">
+	<meta property="og:image" content="/images/user.png">
 
+	<!-- Inline SVG favicon (gradient G dot) -->
+	<link rel="icon"
+		href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c3aed'/%3E%3Cstop offset='1' stop-color='%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='url(%23g)'/%3E%3Ctext x='50' y='70' font-family='monospace' font-size='60' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+		rel="stylesheet">
+
+	<!-- Mark JS as available before first paint, so scroll-reveal only hides
+	     content when JS can actually reveal it again (progressive enhancement). -->
+	<script>document.documentElement.classList.add('js');</script>
+
+	<link rel="stylesheet" href="/assets/css/styles.css">
+
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					fontFamily: {
+						sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+						mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+					},
+				},
+			},
+		};
+	</script>
 </head>
 
-<body>
-	<!-- site-container-->
-	<div class="site-container">
-		<!--  header -->
-		<header id="menu">
-			<div class="text-center">
-				<div class="d-flex float-right mr-1 p-2 js--menuOpener yellow-bg rounded shadow">
-					<div class="menu px-3">MENU</div>
-					<div class="menu-toggle">
-						<i class="fas fa-bars"></i>
-					</div>
-				</div>
-				<ul class="menu-container">
-					<li><span class="underlined">HOME</span></li>
-					<li><span>ABOUT</span></li>
-					<li><span>RESUME</span></li>
-				</ul>
+<body class="bg-white text-slate-600 font-sans antialiased selection:bg-violet-200">
 
+	<!-- Decorative background: grid + soft glow blobs -->
+	<div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+		<div class="grid-bg absolute inset-0"></div>
+		<div class="glow-blob absolute -top-40 left-1/2 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-violet-300/30 blur-[120px]"></div>
+		<div class="glow-blob absolute top-1/2 -right-40 h-[28rem] w-[28rem] rounded-full bg-cyan-200/40 blur-[120px]"></div>
+	</div>
+
+	<!-- ============ NAV ============ -->
+	<header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/70 backdrop-blur-xl">
+		<nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+			<a href="#home" class="group flex items-center gap-2 font-mono text-lg font-bold text-slate-900">
+				<span class="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-violet-600 to-cyan-500 text-white">G</span>
+				<span class="hidden sm:inline">georgi<span class="text-violet-600">.dev</span></span>
+			</a>
+
+			<ul class="hidden items-center gap-8 text-sm font-medium text-slate-500 md:flex">
+				<li><a class="nav-link transition hover:text-slate-900" href="#home">Home</a></li>
+				<li><a class="nav-link transition hover:text-slate-900" href="#about">About</a></li>
+				<li><a class="nav-link transition hover:text-slate-900" href="#skills">Skills</a></li>
+				<li><a class="nav-link transition hover:text-slate-900" href="#work">Work</a></li>
+				<li><a class="nav-link transition hover:text-slate-900" href="#experience">Experience</a></li>
+				<li><a class="nav-link transition hover:text-slate-900" href="#contact">Contact</a></li>
+			</ul>
+
+			<div class="flex items-center gap-3">
+				<button type="button" data-open-cv
+					class="hidden rounded-lg bg-gradient-to-r from-violet-600 to-cyan-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-violet-500/25 transition hover:scale-[1.03] sm:inline-block">
+					Download CV
+				</button>
+				<button type="button" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false"
+					class="grid h-9 w-9 place-items-center rounded-lg border border-slate-300 text-slate-600 md:hidden">
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+						stroke="currentColor" stroke-width="2" stroke-linecap="round">
+						<line x1="4" y1="7" x2="20" y2="7" /><line x1="4" y1="12" x2="20" y2="12" /><line x1="4" y1="17" x2="20" y2="17" />
+					</svg>
+				</button>
 			</div>
-		</header> <!-- eof header -->
+		</nav>
 
+		<!-- Mobile menu -->
+		<div id="mobile-menu" class="hidden border-t border-slate-200 bg-white/95 px-6 py-4 md:hidden">
+			<ul class="flex flex-col gap-4 text-sm font-medium text-slate-700">
+				<li><a class="mobile-link block" href="#about">About</a></li>
+				<li><a class="mobile-link block" href="#skills">Skills</a></li>
+				<li><a class="mobile-link block" href="#work">Work</a></li>
+				<li><a class="mobile-link block" href="#experience">Experience</a></li>
+				<li><a class="mobile-link block" href="#contact">Contact</a></li>
+				<li><button type="button" data-open-cv
+						class="mt-1 w-full rounded-lg bg-gradient-to-r from-violet-600 to-cyan-500 px-4 py-2 font-semibold text-white">Download CV</button>
+				</li>
+			</ul>
+		</div>
+	</header>
 
+	<main class="mx-auto max-w-6xl px-6">
 
+		<!-- ============ HERO ============ -->
+		<section id="home" class="flex min-h-[88vh] items-center py-20">
+			<div class="grid w-full items-center gap-12 lg:grid-cols-2">
+				<div>
+					<p class="mb-5 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-1.5 text-xs font-medium text-slate-500">
+						<span class="relative flex h-2 w-2">
+							<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+							<span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+						</span>
+						Available for work
+					</p>
 
-		<div class="pages-container">
-			<!-- main-page -->
-			<div id="HOME" class="page main-page animation-divs">
-				<div class="title-section">
-					<h6 class="bg-warning w-25 text-center py-3 rounded-right shadow">HOME</h6>
-					<div class="pg-title position-relative">
-						<h2 class="text-dark my-5">HOME</h2>
-					</div>
-				</div>
-				<div class="row no-gutters full-screen">
-					<div
-						class="col col-12 col-lg-3 col-xl-3 blue-bg col-user-image mobile-image main-page-img-container responsive-change">
-						<img class="main-page-img" src="images/user.png" alt="">
-					</div>
-					<div class="col col-12 col-lg-9 col-xl-8 main-bg-image responsive-change ">
-						<div class="text-content">
-							<h1>Hello,</h1>
-							<h1 class="hello-text">I'm Georgi Ivanov </h1>
-							<a href="javascript:" onclick="openModal()"
-								class="btn btn-warning text-white font-weight-bold btn-lg shadow">Download CV</a>
-						</div>
-					</div>
-				</div>
-			</div> <!-- eof main-page -->
+					<h1 class="text-5xl font-extrabold leading-[1.05] tracking-tight text-slate-900 sm:text-6xl">
+						Georgi<br>
+						<span class="bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-500 bg-clip-text text-transparent">Ivanov</span>
+					</h1>
 
+					<p class="mt-6 font-mono text-lg text-slate-500">
+						<span class="text-cyan-600">&gt;</span>
+						<span id="typed" class="text-slate-800"></span><span class="type-cursor">▌</span>
+					</p>
 
+					<p class="mt-6 max-w-md text-base leading-relaxed text-slate-600">
+						I build production web apps end to end — from Laravel &amp; NestJS backends
+						to Vue &amp; Next.js frontends. Clean architecture, type safety, and the
+						details done right.
+					</p>
 
-			<!-- about-page -->
-
-			<div id="ABOUT" class="page page-content about-page hidden">
-				<div class="title-section">
-					<h6 class="bg-warning w-25 text-center py-3 rounded-right shadow">WHO I AM</h6>
-					<div class="pg-title position-relative">
-						<h2 class="text-dark my-5 font-weight-bold">ABOUT</h2>
-					</div>
-				</div>
-				<div class="row no-gutters full-screen">
-					<div class="col col-lg-3 col-xl-3 min-vh-80 col-user-image">
-						<img class="" src="images/progress.jpg" alt="">
-					</div>
-					<div class="col col-lg-9 col-xl-8 my-auto d-flex">
-						<div class="about-img mobile-image col col-12 col-lg-4 col-xl-3p-5">
-							<img src="images/laptop.jpg" alt="">
-						</div>
-						<div class="col col-12 col-lg-8 col-xl-9 text-justify cv-info">
-							<h2 class="mb-2">I'm Georgi Ivanov</h2>
-							<p class="shadow p-5">
-								Very ambitious, creative and quick-learning person with programming and time keeping
-								skills.
-								Have some experience and knowledge in application development with HTML5, CSS3 и
-								responsive layouts, JavaScript (JSON), jQuery,Apache Cordova, .NET platform and many
-								more. <br />
-								Works with precision and a very good team player. Keen on keeping deadlines!
-							</p>
-							<h3>Hobbies and Interests</h3>
-							<p class="shadow p-5">
-								Playing footbal, travelling, long walks on the beach, being in nature, reading and many
-								more.
-
-							</p>
-
-							<div class="col-12 d-flex">
-								<a href="javascript:" onclick="openModal()"
-									class="btn btn-warning text-white font-weight-bold btn-lg ml-1 shadow mt-2">Download
-									CV</a>
-								<a href="https://github.com/givanov95"
-									class="btn btn-warning text-white font-weight-bold btn-lg ml-1 shadow mt-2">GitHub</a>
-								<a href="https://www.linkedin.com/in/georgi-ivanov-5a7a7b172/"
-									class="btn btn-warning text-white font-weight-bold btn-lg ml-1 shadow mt-2">LinkedIn</a>
-							</div>
-						</div>
-
+					<div class="mt-8 flex flex-wrap items-center gap-4">
+						<a href="#work"
+							class="rounded-lg bg-gradient-to-r from-violet-600 to-cyan-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-500/25 transition hover:scale-[1.03]">
+							View my work
+						</a>
+						<button type="button" data-open-cv
+							class="rounded-lg border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-50">
+							Download CV
+						</button>
 					</div>
 
-				</div>
-
-				<hr style="width: 80%; margin:2em auto" />
-
-				<div class="container">
-					<div class="row my-5 about-counter-row">
-						<div class="col-12 col-md-3">
-							<i class="fas fa-users"></i>
-							<span class="font-weight-bold">1000%</span>
-							<small class="d-block pl-5">TEAM PLAYER</small>
-						</div>
-
-						<div class="col-12 col-md-3 ">
-							<i class="fas fa-laptop-code"></i>
-							<span class="font-weight-bold">10+</span>
-							<small class="d-block pl-5">PROJECTS DONE</small>
-						</div>
-
-
-						<div class="col-12 col-md-3 ">
-							<i class="fas fa-lightbulb"></i>
-							<span class="font-weight-bold">83%</span>
-							<small class="d-block pl-4">CREATIVITY</small>
-						</div>
-
-						<div class="col-12 col-md-3 ">
-							<i class="fas fa-user-friends"></i>
-							<span class="font-weight-bold">100%</span>
-							<small class="d-block pl-5">FRIENDLY PERSONALITY</small>
-						</div>
-
-
-
+					<div class="mt-8 flex items-center gap-5 text-slate-400">
+						<a href="https://github.com/givanov95" target="_blank" rel="noopener" aria-label="GitHub" class="transition hover:text-slate-900">
+							<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 5 18 5.3 18 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
+						</a>
+						<a href="https://www.linkedin.com/in/georgi-ivanov-5a7a7b172/" target="_blank" rel="noopener" aria-label="LinkedIn" class="transition hover:text-slate-900">
+							<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2ZM7.1 20.4H3.5V9h3.6v11.4ZM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0Z"/></svg>
+						</a>
+						<a href="mailto:joroz95@gmail.com" aria-label="Email" class="transition hover:text-slate-900">
+							<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+						</a>
 					</div>
 				</div>
 
-
-
-			</div> <!-- eof-about-page -->
-
-
-
-
-			<!-- Reusme  -->
-
-			<div id="RESUME" class="page page-content resume-page hidden">
-				<div class="title-section">
-					<h6 class="bg-warning w-25 text-center py-3 rounded-right shadow">HISTORY</h6>
-					<div class="pg-title position-relative">
-						<h2 class="text-dark my-5 font-weight-bold">MY RESUME</h2>
+				<!-- Code window (kept dark for editor-style contrast) -->
+				<div class="reveal hidden lg:block">
+					<div class="rounded-xl border border-slate-800 bg-slate-900 shadow-2xl shadow-slate-900/20">
+						<div class="flex items-center gap-2 border-b border-slate-800 px-4 py-3">
+							<span class="h-3 w-3 rounded-full bg-red-400/90"></span>
+							<span class="h-3 w-3 rounded-full bg-yellow-400/90"></span>
+							<span class="h-3 w-3 rounded-full bg-green-400/90"></span>
+							<span class="ml-3 font-mono text-xs text-slate-500">georgi.ts</span>
+						</div>
+						<pre class="overflow-x-auto p-5 font-mono text-sm leading-relaxed text-slate-300"><code><span class="text-fuchsia-400">const</span> <span class="text-cyan-300">georgi</span> <span class="text-slate-500">=</span> {
+  <span class="text-violet-400">role</span>: <span class="text-emerald-300">"Full-Stack Developer"</span>,
+  <span class="text-violet-400">location</span>: <span class="text-emerald-300">"Varna, Bulgaria"</span>,
+  <span class="text-violet-400">stack</span>: [<span class="text-emerald-300">"Laravel"</span>, <span class="text-emerald-300">"Vue"</span>, <span class="text-emerald-300">"Next.js"</span>, <span class="text-emerald-300">"NestJS"</span>],
+  <span class="text-violet-400">focus</span>: <span class="text-emerald-300">"clean architecture + type safety"</span>,
+  <span class="text-violet-400">openToWork</span>: <span class="text-orange-300">true</span>,
+};</code></pre>
 					</div>
 				</div>
-				<div class="row no-gutters full-screen">
-					<div class="col col-lg-3 col-xl-3 min-vh-80 col-user-image">
-						<img class="" src="images/projects.jpg" alt="">
+			</div>
+		</section>
+
+		<!-- ============ ABOUT ============ -->
+		<section id="about" class="scroll-mt-24 py-24">
+			<div class="reveal">
+				<p class="font-mono text-sm text-violet-600">// about</p>
+				<h2 class="mt-2 text-3xl font-bold text-slate-900 sm:text-4xl">Who I am</h2>
+			</div>
+
+			<div class="mt-12 grid items-center gap-12 md:grid-cols-[auto_1fr]">
+				<div class="reveal mx-auto">
+					<div class="rounded-2xl bg-gradient-to-br from-violet-600 to-cyan-500 p-1 shadow-lg shadow-violet-500/20">
+						<img src="/images/user.png" alt="Georgi Ivanov"
+							class="h-48 w-48 rounded-2xl object-cover bg-slate-100" loading="lazy">
 					</div>
-					<div class="col col-lg-9 col-xl-8 m-5 ">
-						<div class="timeline-container-row">
-							<h2 class="ml-5">Education and Experience</h2>
-							<ul class="timeline-container ml-5">
-
-								<li class="shadow position-relative my-5">
-									<div class="head-box p-5">
-										<i class="fas fa-briefcase yellow-bg"></i>
-										<span>Doors Bulgaria - Varna</span>
-										<small class="d-block mt-2 ml-5">Nov 2020 - Present</small>
-									</div>
-
-									<div class="bottom-box p-5">
-										<p>Full Stack Web Developer for company in Varna, Bulgaria.</p>
-									</div>
-								</li>
-
-								<li class="shadow position-relative my-5">
-									<div class="head-box p-5">
-										<i class="fas fa-briefcase yellow-bg"></i>
-										<span>J & F Style - Varna</span>
-										<small class="d-block mt-2 ml-5">Aug 2020 - NOV 2020</small>
-									</div>
-
-									<div class="bottom-box p-5">
-										<p>Junior Web Developer for company in Varna, Bulgaria.</p>
-									</div>
-								</li>
-
-								<li class="shadow position-relative my-5">
-									<div class="head-box p-5">
-										<i class="fas fa-briefcase yellow-bg"></i>
-										<span>Internet reklama - Varna</span>
-										<small class="d-block mt-2 ml-5">APR 2019 - MAY 2020</small>
-									</div>
-
-									<div class="bottom-box p-5">
-										<p>Junior Wordpress Developer for web developing company in Varna, Bulgaria.</p>
-									</div>
-								</li>
-
-								<li class="shadow position-relative my-5">
-									<div class="head-box p-5">
-										<i class="fas fa-briefcase"></i>
-										<span>University of Economics - Varna</span>
-										<small class="d-block mt-2 ml-5">MAR 2020 -</small>
-									</div>
-
-									<div class="bottom-box p-5">
-										<p>Master's Degree in Computer Science</p>
-									</div>
-								</li>
-
-								<li class="shadow position-relative">
-									<div class="head-box p-5">
-										<i class="fas fa-briefcase"></i>
-										<span>University of Economics - Varna</span>
-										<small class="d-block mt-2 ml-5">MAR 2020 -</small>
-									</div>
-
-									<div class="bottom-box p-5">
-										<p>Bachelor's Degree in Computer Science</p>
-									</div>
-								</li>
-							</ul>
-						</div><!-- eof-timeline-container -->
+				</div>
+				<div class="reveal space-y-5 text-base leading-relaxed text-slate-600">
+					<p>
+						I'm a full-stack web developer based in <span class="font-medium text-slate-900">Varna, Bulgaria</span>.
+						I build production applications from the ground up — architecting backends with
+						<span class="font-medium text-slate-900">Laravel</span> and <span class="font-medium text-slate-900">NestJS</span>,
+						crafting frontends with <span class="font-medium text-slate-900">Vue</span> and
+						<span class="font-medium text-slate-900">Next.js</span>, and shipping reusable packages and
+						starter templates that make every new project faster.
+					</p>
+					<p>
+						I care about clean architecture, type-safe code, and getting the small details right.
+						Quick to learn, reliable with deadlines, and a genuine team player.
+					</p>
+					<div class="flex flex-wrap gap-3 pt-2">
+						<a href="https://github.com/givanov95" target="_blank" rel="noopener"
+							class="rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-50">GitHub</a>
+						<a href="https://www.linkedin.com/in/georgi-ivanov-5a7a7b172/" target="_blank" rel="noopener"
+							class="rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-50">LinkedIn</a>
+						<button type="button" data-open-cv
+							class="rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-50">Download CV</button>
 					</div>
-					<div class="coding-skills col-12">
-						<div class="pg-title position-relative">
-							<h2 class="text-dark my-5 font-weight-bold">Coding skills</h2>
-						</div>
+				</div>
+			</div>
+		</section>
 
-						<div class="col-sm-6 d-inline-block">
-							<div class="progress-left">
-								<h6>HTML</h6>
-								<span
-									class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">95%</span>
-								<div class="progress">
-									<div class="progress-bar " style="width: 95%">
-									</div>
-								</div>
-							</div> <!-- /progress-bar -->
+		<!-- ============ SKILLS ============ -->
+		<section id="skills" class="scroll-mt-24 py-24">
+			<div class="reveal">
+				<p class="font-mono text-sm text-violet-600">// skills</p>
+				<h2 class="mt-2 text-3xl font-bold text-slate-900 sm:text-4xl">Tech I work with</h2>
+			</div>
 
+			<div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+				<!-- Backend -->
+				<div class="reveal rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-violet-300 hover:shadow-lg">
+					<div class="mb-4 flex items-center gap-3">
+						<span class="grid h-10 w-10 place-items-center rounded-lg bg-violet-100 text-violet-600">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg>
+						</span>
+						<h3 class="text-lg font-semibold text-slate-900">Backend</h3>
+					</div>
+					<div class="flex flex-wrap gap-2">
+						<span class="chip">PHP</span><span class="chip">Laravel</span><span class="chip">NestJS</span>
+						<span class="chip">Node.js</span><span class="chip">REST APIs</span><span class="chip">MySQL</span>
+						<span class="chip">Prisma</span>
+					</div>
+				</div>
 
-							<div class="progress-left mt-5">
-								<h6>CSS/SCSS</h6>
-								<span
-									class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">85%</span>
-								<div class="progress">
-									<div class="progress-bar " style="width: 85%">
-									</div>
-								</div>
-							</div> <!-- /progress-bar -->
+				<!-- Frontend -->
+				<div class="reveal rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-cyan-300 hover:shadow-lg">
+					<div class="mb-4 flex items-center gap-3">
+						<span class="grid h-10 w-10 place-items-center rounded-lg bg-cyan-100 text-cyan-600">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+						</span>
+						<h3 class="text-lg font-semibold text-slate-900">Frontend</h3>
+					</div>
+					<div class="flex flex-wrap gap-2">
+						<span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">Vue</span>
+						<span class="chip">Next.js</span><span class="chip">React</span><span class="chip">Tailwind CSS</span>
+						<span class="chip">HTML5</span><span class="chip">CSS3</span>
+					</div>
+				</div>
 
-							<div class="progress-left mt-5">
-								<h6>Javascript/JSON</h6>
-								<span
-									class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">92%</span>
-								<div class="progress">
-									<div class="progress-bar " style="width: 92%">
-									</div>
-								</div>
-							</div> <!-- /progress-bar -->
-
-
-							<div class="progress-left mt-5">
-								<h6>Jquery</h6>
-								<span
-									class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">62%</span>
-								<div class="progress">
-									<div class="progress-bar " style="width: 62%">
-									</div>
-								</div>
-							</div> <!-- /progress-bar -->
-
-						</div>
-
-						<div class="col-sm-6 d-inline-block float-right">
-
-							<div class="progress-right">
-								<h6>.NET Core</h6>
-								<span
-									class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">20%</span>
-								<div class="progress">
-									<div class="progress-bar " style="width: 20%">
-									</div>
-								</div>
-							</div> <!-- /progress-bar -->
-
-
-
-							<div class="progress-right mt-5">
-								<h6>PHP</h6>
-								<span
-									class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">95%</span>
-								<div class="progress">
-									<div class="progress-bar " style="width: 95%">
-									</div>
-								</div>
-							</div> <!-- /progress-bar -->
-
-							<div class="progress-right mt-5">
-								<h6>CMS and Frameworks</h6>
-								<span
-									class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">90%</span>
-								<div class="progress">
-									<div class="progress-bar " style="width: 90%">
-									</div>
-								</div>
-							</div> <!-- /progress-bar -->
-
-							<div class="progress-right mt-5">
-								<h6>AJAX</h6>
-								<span
-									class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">95%</span>
-								<div class="progress">
-									<div class="progress-bar " style="width: 95%">
-									</div>
-								</div>
-							</div> <!-- /progress-bar -->
-
-						</div>
-
-						<div class="col-sm-6 d-inline-block mt-4 float-left">
-							<div class="progress-left">
-								<h6>Laravel</h6>
-								<span
-									class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">78%</span>
-								<div class="progress">
-									<div class="progress-bar" style="width: 78%">
-									</div>
-								</div>
-							</div> <!-- /progress-bar -->
-						</div>
-
-						<div class="col-sm-6 d-inline-block mt-4 float-right">
-							<div class="progress-left">
-								<h6>Next.js</h6>
-								<span
-									class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">0%</span>
-								<div class="progress">
-									<div class="progress-bar" style="width: 0%">
-									</div>
-								</div>
-							</div> <!-- /progress-bar -->
-						</div>
-
-						<div class="col-sm-6 d-inline-block mt-4 float-left">
-							<div class="progress-left">
-								<h6>React</h6>
-								<span
-									class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">0%</span>
-								<div class="progress">
-									<div class="progress-bar" style="width: 0%">
-									</div>
-								</div>
-							</div> <!-- /progress-bar -->
-						</div>
-
-						<div class="col-sm-6 d-inline-block mt-4 float-right">
-							<div class="progress-left">
-								<h6>Redux</h6>
-								<span
-									class="skills-percent-number yellow-bg rounded-circle font-weight-bold px-1">0%</span>
-								<div class="progress">
-									<div class="progress-bar" style="width: 0%">
-									</div>
-								</div>
-							</div> <!-- /progress-bar -->
-						</div>
-
+				<!-- Tools -->
+				<div class="reveal rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-fuchsia-300 hover:shadow-lg">
+					<div class="mb-4 flex items-center gap-3">
+						<span class="grid h-10 w-10 place-items-center rounded-lg bg-fuchsia-100 text-fuchsia-600">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a4 4 0 0 0-5.7 5.7l-6 6a2 2 0 1 0 2.8 2.8l6-6a4 4 0 0 0 5.7-5.7l-2.5 2.5-2.8-2.8 2.5-2.5Z"/></svg>
+						</span>
+						<h3 class="text-lg font-semibold text-slate-900">Tools &amp; Platforms</h3>
+					</div>
+					<div class="flex flex-wrap gap-2">
+						<span class="chip">Git</span><span class="chip">Docker</span><span class="chip">Linux</span>
+						<span class="chip">Apache</span><span class="chip">WordPress</span><span class="chip">Composer</span>
+						<span class="chip">Vite</span>
 					</div>
 				</div>
 			</div>
 
-
-			<!-- --modal -->
-			<div class="modal fade show shadow-lg" id="choiceVersion" tabindex="-1" role="dialog"
-				aria-labelledby="modalLabel" aria-modal="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="modalLabel">Изберете езикова версия на CV</h5>
-							<a href="javascript:" class="close" type="button" data-dismiss="modal" aria-label="Close"
-								onclick="hideModal(this)">×</a>
-						</div>
-						<div class="modal-body">
-							<strong>Please choice language version of CV</strong>
-						</div>
-						<div class="modal-footer">
-							<a href="/cv/resume-en.pdf" class="btn btn-primary">RESUME EN</a>
-							<a href="/cv/resume-bg.pdf" class="btn btn-primary">RESUME BG</a>
-							<a href="/cv/cv-bg.pdf" class="btn btn-success">CV BG</a>
-							<a href="/cv/cv-en.pdf" class="btn btn-danger">CV EN</a>
-						</div>
+			<!-- Currently exploring / want to work with next -->
+			<div class="reveal mt-6 flex flex-col gap-4 rounded-2xl border border-dashed border-slate-300 bg-slate-50/70 p-6 sm:flex-row sm:items-center sm:justify-between">
+				<div class="flex items-center gap-3">
+					<span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-violet-100 to-cyan-100 text-violet-600">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="m12 3-1.9 5.8-5.8 1.9 5.8 1.9L12 18l1.9-5.8 5.8-1.9-5.8-1.9z"/></svg>
+					</span>
+					<div>
+						<h3 class="font-semibold text-slate-900">Currently exploring</h3>
+						<p class="text-sm text-slate-500">Tech I'm learning and keen to work with next</p>
 					</div>
 				</div>
-			</div> <!-- --eof modal -->
+				<div class="flex flex-wrap gap-2">
+					<span class="chip">React Native</span><span class="chip">Kotlin</span>
+				</div>
+			</div>
+		</section>
 
+		<!-- ============ WORK ============ -->
+		<section id="work" class="scroll-mt-24 py-24">
+			<div class="reveal flex items-end justify-between gap-4">
+				<div>
+					<p class="font-mono text-sm text-violet-600">// work</p>
+					<h2 class="mt-2 text-3xl font-bold text-slate-900 sm:text-4xl">Selected work</h2>
+				</div>
+				<a href="https://github.com/givanov95" target="_blank" rel="noopener"
+					class="hidden shrink-0 items-center gap-1.5 text-sm font-medium text-slate-500 transition hover:text-slate-900 sm:inline-flex">
+					All on GitHub
+					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+				</a>
+			</div>
 
-			<!-- eof-resume-page -->
+			<div class="mt-12 grid gap-6 md:grid-cols-3">
+				<a href="https://github.com/givanov95" target="_blank" rel="noopener"
+					class="reveal group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-violet-300 hover:shadow-lg">
+					<div class="mb-4 flex items-center justify-between">
+						<span class="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-violet-100 to-cyan-100 text-xl">🛒</span>
+						<svg class="text-slate-300 transition group-hover:text-slate-900" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+					</div>
+					<h3 class="text-lg font-semibold text-slate-900">Laravel Starter &amp; Shop</h3>
+					<p class="mt-2 text-sm leading-relaxed text-slate-600">
+						A reusable Laravel base template and a full e-commerce platform built on top of it —
+						multilingual, with a clean, extendable architecture.
+					</p>
+					<div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-500">
+						<span class="chip-sm">Laravel</span><span class="chip-sm">Vue</span><span class="chip-sm">MySQL</span>
+					</div>
+				</a>
 
-		</div> <!-- eof-site-container -->
+				<a href="https://github.com/givanov95" target="_blank" rel="noopener"
+					class="reveal group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-cyan-300 hover:shadow-lg">
+					<div class="mb-4 flex items-center justify-between">
+						<span class="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-violet-100 to-cyan-100 text-xl">📦</span>
+						<svg class="text-slate-300 transition group-hover:text-slate-900" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+					</div>
+					<h3 class="text-lg font-semibold text-slate-900">Reusable packages</h3>
+					<p class="mt-2 text-sm leading-relaxed text-slate-600">
+						Composable Laravel &amp; JS packages — translations, attachments, typed HTTP clients
+						and Vue form components — extracted to power every new project.
+					</p>
+					<div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-500">
+						<span class="chip-sm">PHP</span><span class="chip-sm">TypeScript</span><span class="chip-sm">Composer</span>
+					</div>
+				</a>
 
+				<a href="https://github.com/givanov95" target="_blank" rel="noopener"
+					class="reveal group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-fuchsia-300 hover:shadow-lg">
+					<div class="mb-4 flex items-center justify-between">
+						<span class="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-violet-100 to-cyan-100 text-xl">⚡</span>
+						<svg class="text-slate-300 transition group-hover:text-slate-900" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+					</div>
+					<h3 class="text-lg font-semibold text-slate-900">NestJS + Next.js starter</h3>
+					<p class="mt-2 text-sm leading-relaxed text-slate-600">
+						A full-stack TypeScript monorepo template — NestJS API, Next.js frontend and Prisma,
+						with shared Zod-typed contracts across the stack.
+					</p>
+					<div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-500">
+						<span class="chip-sm">NestJS</span><span class="chip-sm">Next.js</span><span class="chip-sm">Prisma</span>
+					</div>
+				</a>
+			</div>
+		</section>
 
-		<script src="/myjs.js">
+		<!-- ============ EXPERIENCE ============ -->
+		<section id="experience" class="scroll-mt-24 py-24">
+			<div class="reveal">
+				<p class="font-mono text-sm text-violet-600">// experience</p>
+				<h2 class="mt-2 text-3xl font-bold text-slate-900 sm:text-4xl">Experience &amp; education</h2>
+			</div>
 
-		</script>
+			<div class="mt-12 grid gap-12 lg:grid-cols-2">
+				<!-- Work -->
+				<div class="reveal">
+					<h3 class="mb-6 text-sm font-semibold uppercase tracking-widest text-slate-400">Work</h3>
+					<ol class="relative space-y-8 border-l border-slate-200 pl-8">
+						<li class="timeline-item">
+							<time class="font-mono text-xs text-cyan-600">Jan 2022 — Present</time>
+							<h4 class="mt-1 font-semibold text-slate-900">Full-Stack Web Developer</h4>
+							<p class="text-sm text-slate-500">James IT Services — Varna</p>
+						</li>
+						<li class="timeline-item">
+							<time class="font-mono text-xs text-cyan-600">Nov 2020 — Jan 2022</time>
+							<h4 class="mt-1 font-semibold text-slate-900">Full-Stack Web Developer</h4>
+							<p class="text-sm text-slate-500">Doors Bulgaria — Varna</p>
+						</li>
+						<li class="timeline-item">
+							<time class="font-mono text-xs text-cyan-600">Aug 2020 — Nov 2020</time>
+							<h4 class="mt-1 font-semibold text-slate-900">Junior Web Developer</h4>
+							<p class="text-sm text-slate-500">J &amp; F Style — Varna</p>
+						</li>
+						<li class="timeline-item">
+							<time class="font-mono text-xs text-cyan-600">Apr 2019 — May 2020</time>
+							<h4 class="mt-1 font-semibold text-slate-900">Junior WordPress Developer</h4>
+							<p class="text-sm text-slate-500">Internet Reklama — Varna</p>
+						</li>
+					</ol>
+				</div>
 
+				<!-- Education -->
+				<div class="reveal">
+					<h3 class="mb-6 text-sm font-semibold uppercase tracking-widest text-slate-400">Education</h3>
+					<ol class="relative space-y-8 border-l border-slate-200 pl-8">
+						<li class="timeline-item">
+							<time class="font-mono text-xs text-violet-600">2018 — 2020</time>
+							<h4 class="mt-1 font-semibold text-slate-900">Master's Degree — Mobile &amp; Web Technologies</h4>
+							<p class="text-sm text-slate-500">University of Economics — Varna</p>
+						</li>
+						<li class="timeline-item">
+							<time class="font-mono text-xs text-violet-600">2014 — 2018</time>
+							<h4 class="mt-1 font-semibold text-slate-900">Bachelor's Degree — Business Information Systems</h4>
+							<p class="text-sm text-slate-500">University of Economics — Varna</p>
+						</li>
+					</ol>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============ CONTACT ============ -->
+		<section id="contact" class="scroll-mt-24 py-24">
+			<div class="reveal overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-violet-50 via-white to-cyan-50 px-8 py-16 text-center shadow-sm">
+				<p class="font-mono text-sm text-violet-600">// contact</p>
+				<h2 class="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">Let's build something together</h2>
+				<p class="mx-auto mt-4 max-w-md text-slate-600">
+					Got a project in mind or an open role? I'd love to hear about it.
+				</p>
+				<div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+					<a href="mailto:joroz95@gmail.com"
+						class="rounded-lg bg-gradient-to-r from-violet-600 to-cyan-500 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-violet-500/25 transition hover:scale-[1.03]">
+						Get in touch
+					</a>
+					<a href="https://github.com/givanov95" target="_blank" rel="noopener"
+						class="rounded-lg border border-slate-300 bg-white px-7 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-50">
+						GitHub
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<!-- ============ FOOTER ============ -->
+	<footer class="border-t border-slate-200">
+		<div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 text-sm text-slate-500 sm:flex-row">
+			<div class="flex flex-col items-center gap-1 sm:items-start">
+				<p>© <span id="year"></span> Georgi Ivanov.</p>
+				<p class="text-xs text-slate-400">Coffee <span class="text-slate-300">→</span> code <span class="text-slate-300">→</span> repeat</p>
+			</div>
+			<div class="flex items-center gap-5">
+				<a href="https://github.com/givanov95" target="_blank" rel="noopener" class="transition hover:text-slate-900">GitHub</a>
+				<a href="https://www.linkedin.com/in/georgi-ivanov-5a7a7b172/" target="_blank" rel="noopener" class="transition hover:text-slate-900">LinkedIn</a>
+				<a href="mailto:joroz95@gmail.com" class="transition hover:text-slate-900">Email</a>
+			</div>
+		</div>
+	</footer>
+
+	<!-- ============ CV MODAL ============ -->
+	<div id="cv-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+		<div data-close-cv class="absolute inset-0 bg-slate-900/40 backdrop-blur-sm"></div>
+		<div class="relative w-full max-w-md rounded-2xl border border-slate-200 bg-white p-6 shadow-2xl">
+			<div class="flex items-start justify-between">
+				<div>
+					<h3 class="text-lg font-semibold text-slate-900">Choose a CV version</h3>
+					<p class="mt-1 text-sm text-slate-500">Изберете езикова версия</p>
+				</div>
+				<button type="button" data-close-cv aria-label="Close"
+					class="grid h-8 w-8 place-items-center rounded-lg text-slate-400 transition hover:bg-slate-100 hover:text-slate-900">✕</button>
+			</div>
+			<div class="mt-6 grid grid-cols-2 gap-3">
+				<a href="/cv/resume-en.pdf" target="_blank" rel="noopener" class="cv-btn">Resume <span class="text-cyan-600">EN</span></a>
+				<a href="/cv/resume-bg.pdf" target="_blank" rel="noopener" class="cv-btn">Resume <span class="text-cyan-600">BG</span></a>
+				<a href="/cv/cv-en.pdf" target="_blank" rel="noopener" class="cv-btn">CV <span class="text-violet-600">EN</span></a>
+				<a href="/cv/cv-bg.pdf" target="_blank" rel="noopener" class="cv-btn">CV <span class="text-violet-600">BG</span></a>
+			</div>
+		</div>
+	</div>
+
+	<script src="/assets/js/main.js"></script>
 </body>
 
 </html>
