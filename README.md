@@ -15,20 +15,20 @@ small vanilla-JS file for interactions.
 
 ## Features
 
-- Responsive layout with mobile nav menu
-- Scroll-reveal animations and active-section nav highlighting (IntersectionObserver)
-- CV modal with EN / BG resume and CV downloads
-- Progressive enhancement — content stays visible if JS fails to load
+- "Profile Sidebar" layout — sticky profile card on desktop, stacked on mobile
+- Colourful rounded section panels (Work, Skills, Experience, Contact)
+- Active-section nav highlighting (IntersectionObserver)
+- CV modal with EN / BG resume and CV downloads, and a copy-email button
 - Inline SVG favicon and Open Graph tags for social sharing
 
 ## Structure
 
 ```
 .
-├── index.html          # The whole page (nav, hero, about, skills, work, experience, contact)
+├── index.html          # The whole page (profile sidebar, intro, work, skills, experience, contact)
 ├── assets/
 │   ├── css/styles.css   # Custom styles on top of Tailwind
-│   └── js/main.js       # Nav, scroll-reveal, scroll-spy, CV modal
+│   └── js/main.js       # Scroll-spy, CV modal, copy email
 ├── cv/                 # Resume / CV PDFs (EN + BG)
 ├── images/             # Photos and assets
 └── LICENSE
