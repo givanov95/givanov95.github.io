@@ -8,12 +8,15 @@
 	<meta name="description"
 		content="Georgi Ivanov — full-stack web developer from Varna, Bulgaria. Building production web apps with Laravel, NestJS, Vue and Next.js.">
 
-	<!-- Social sharing -->
+	<link rel="canonical" href="https://givanov95.github.io/">
+
+	<!-- Social sharing (crawlers need full URLs, not paths) -->
 	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://givanov95.github.io/">
 	<meta property="og:title" content="Georgi Ivanov — Full-Stack Web Developer">
 	<meta property="og:description"
 		content="Building production web apps with Laravel, NestJS, Vue and Next.js.">
-	<meta property="og:image" content="/images/user.png">
+	<meta property="og:image" content="https://givanov95.github.io/images/user.png">
 
 	<!-- Inline SVG favicon (orange G tile) -->
 	<link rel="icon"
@@ -25,39 +28,8 @@
 		href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600;700&display=swap"
 		rel="stylesheet">
 
+	<!-- Compiled from src/styles.css with `npm run build` -->
 	<link rel="stylesheet" href="/assets/css/styles.css">
-
-	<script src="https://cdn.tailwindcss.com"></script>
-	<script>
-		tailwind.config = {
-			theme: {
-				extend: {
-					fontFamily: {
-						sans: ['Figtree', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-						serif: ['"Young Serif"', 'ui-serif', 'Georgia', 'serif'],
-					},
-					colors: {
-						cream: '#fff8f1',
-						ink: '#23201c',
-						muted: '#6a6258',
-						soft: '#5a5249',
-						accent: '#d9542c',
-						coral: '#ff9a6b',
-						peach: '#ffe9da',
-						'peach-deep': '#ffd9c4',
-						blush: '#fff1e6',
-						sand: '#fbf4ec',
-						line: '#f1e8de',
-						mint: '#e3f4e8',
-						'mint-ink': '#1b6b3d',
-						sky: '#e6ecfb',
-						butter: '#fcefc7',
-						rose: '#f6e3f1',
-					},
-				},
-			},
-		};
-	</script>
 </head>
 
 <body class="bg-cream font-sans text-ink antialiased selection:bg-[#ffcfb5]">
@@ -314,13 +286,13 @@
 					<span class="text-[17px] font-bold">Resume</span><span class="text-[13px] font-medium">English · PDF</span>
 				</a>
 				<a href="/cv/resume-bg.pdf" target="_blank" rel="noopener" class="flex flex-col gap-1 rounded-[20px] bg-mint p-[18px] text-ink hover:bg-ink hover:text-white">
-					<span class="text-[17px] font-bold">Resume</span><span class="text-[13px] font-medium">Български · PDF</span>
+					<span class="text-[17px] font-bold">Resume</span><span lang="bg" class="text-[13px] font-medium">Български · PDF</span>
 				</a>
 				<a href="/cv/cv-en.pdf" target="_blank" rel="noopener" class="flex flex-col gap-1 rounded-[20px] bg-sky p-[18px] text-ink hover:bg-ink hover:text-white">
 					<span class="text-[17px] font-bold">Full CV</span><span class="text-[13px] font-medium">English · PDF</span>
 				</a>
 				<a href="/cv/cv-bg.pdf" target="_blank" rel="noopener" class="flex flex-col gap-1 rounded-[20px] bg-butter p-[18px] text-ink hover:bg-ink hover:text-white">
-					<span class="text-[17px] font-bold">Full CV</span><span class="text-[13px] font-medium">Български · PDF</span>
+					<span class="text-[17px] font-bold">Full CV</span><span lang="bg" class="text-[13px] font-medium">Български · PDF</span>
 				</a>
 			</div>
 		</div>
