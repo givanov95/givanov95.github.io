@@ -1,0 +1,73 @@
+@page { size: A4; margin: 0; }
+:root { --ink:#23201c; --soft:#4a443c; --muted:#6a6258; --accent:#d9542c; --line:#e7ddd2; --tint:#fbf4ec; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { font-family: 'Noto Sans', 'Liberation Sans', Arial, sans-serif; font-size: 9.3pt; line-height: 1.42; color: var(--ink); }
+.page { width: 210mm; height: 297mm; padding: 15mm 16mm 12mm; position: relative; overflow: hidden; page-break-after: always; }
+.page:last-child { page-break-after: auto; }
+
+header { display: flex; justify-content: space-between; align-items: flex-end; gap: 10mm; padding-bottom: 4mm; border-bottom: 2.2pt solid var(--accent); }
+h1 { font-size: 25pt; line-height: 1.05; font-weight: 700; letter-spacing: -0.02em; }
+.role { margin-top: 1.6mm; font-size: 11.5pt; font-weight: 600; color: var(--accent); }
+.contact { text-align: right; font-size: 8.8pt; line-height: 1.6; color: var(--soft); }
+.contact b { color: var(--ink); font-weight: 600; }
+
+.summary { margin-top: 5mm; font-size: 9.8pt; line-height: 1.5; color: var(--soft); }
+.summary strong { color: var(--ink); font-weight: 600; }
+
+section { margin-top: 5.5mm; }
+h2 { font-size: 8.6pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); padding-bottom: 1.2mm; margin-bottom: 3mm; border-bottom: 0.6pt solid var(--line); }
+
+.job { margin-bottom: 4.4mm; break-inside: avoid; }
+.job:last-child { margin-bottom: 0; }
+.job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 6mm; }
+.job-title { font-size: 10.4pt; font-weight: 700; }
+.job-title span { font-weight: 500; color: var(--muted); }
+.dates { font-size: 8.8pt; font-weight: 600; color: var(--muted); white-space: nowrap; }
+.job p.lead { margin-top: 0.8mm; color: var(--soft); }
+ul { margin-top: 1.4mm; padding-left: 4.2mm; list-style: none; }
+li { position: relative; margin-bottom: 0.9mm; color: var(--soft); }
+li::before { content: ''; position: absolute; left: -3.6mm; top: 0.62em; width: 1.5mm; height: 1.5mm; border-radius: 50%; background: var(--accent); opacity: .85; }
+li b { color: var(--ink); font-weight: 600; }
+.stack { margin-top: 1.6mm; font-size: 8.5pt; color: var(--muted); }
+.stack b { color: var(--soft); font-weight: 600; }
+
+.proj { margin-bottom: 3.4mm; break-inside: avoid; }
+.proj:last-child { margin-bottom: 0; }
+.proj-head { display: flex; justify-content: space-between; align-items: baseline; gap: 6mm; }
+.proj-title { font-size: 10pt; font-weight: 700; }
+.proj-link { font-size: 8.3pt; color: var(--accent); font-weight: 600; white-space: nowrap; }
+.proj p { color: var(--soft); margin-top: 0.5mm; }
+.tags { margin-top: 1mm; font-size: 8.3pt; color: var(--muted); }
+
+.skills { display: grid; grid-template-columns: 24mm 1fr; row-gap: 1.9mm; column-gap: 4mm; }
+.skills dt { font-weight: 700; color: var(--ink); font-size: 9pt; }
+.skills dd { color: var(--soft); }
+
+.two { display: grid; grid-template-columns: 1fr 1fr; column-gap: 10mm; }
+.edu { margin-bottom: 2.4mm; }
+.edu .t { font-weight: 700; }
+.edu .s { color: var(--muted); font-size: 8.8pt; }
+.langs div { display: flex; justify-content: space-between; margin-bottom: 0.8mm; color: var(--soft); }
+.langs b { color: var(--ink); font-weight: 600; }
+.foot { position: absolute; left: 16mm; right: 16mm; bottom: 8mm; display: flex; justify-content: space-between; font-size: 7.8pt; color: var(--muted); }
+a { color: inherit; text-decoration: none; }
+.proj-link a { color: var(--accent); }
+li a { font-weight: 600; color: var(--ink); border-bottom: 0.5pt solid var(--accent); }
+.pub { font-size: 7.6pt; font-weight: 600; color: var(--accent); white-space: nowrap; margin-left: 1mm; }
+
+/* ---- Resume (2 pages) vs Full CV (3 pages): the same file, `?full` switches modes ---- */
+.full-only { display: none; }
+html.full .full-only { display: block; }
+html.full .resume-only { display: none; }
+.page.last { page-break-after: auto; }
+
+.rows .row { display: flex; justify-content: space-between; align-items: baseline; gap: 6mm; margin-bottom: 2.6mm; break-inside: avoid; }
+.rows .row:last-child { margin-bottom: 0; }
+.rows .what { color: var(--soft); }
+.rows .what b { color: var(--ink); font-weight: 600; }
+.rows .sub { color: var(--muted); font-size: 8.6pt; }
+.rows .dates { font-size: 8.6pt; }
+.edu .s + .s { margin-top: 0.4mm; }
+.other div { display: flex; justify-content: space-between; margin-bottom: 0.8mm; color: var(--soft); }
+.other b { color: var(--ink); font-weight: 600; }
