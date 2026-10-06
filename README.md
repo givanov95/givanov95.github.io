@@ -22,6 +22,7 @@ vanilla-JS file for interactions.
 - CV modal with EN / BG resume and CV downloads, and a copy-email button
 - Inline SVG favicon, canonical URL and Open Graph tags for social sharing
 - `robots.txt` and `sitemap.xml` for crawlers
+- Content-Security-Policy via meta tag: same-origin resources only, no inline scripts or styles
 
 ## Structure
 
