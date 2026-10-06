@@ -4,6 +4,12 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Content Security Policy. Keep it first in <head>: a meta policy only covers what is parsed after it.
+		Anything new from another origin (scripts, fonts, CDN, embeds) has to be allowed here (see CLAUDE.md). -->
+	<meta http-equiv="Content-Security-Policy"
+		content="default-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; object-src 'none'">
+
 	<title>Georgi Ivanov — Full-Stack Web Developer</title>
 	<meta name="description"
 		content="Georgi Ivanov — full-stack web developer from Varna, Bulgaria. Building production web apps with Laravel, NestJS, Vue and Next.js.">
