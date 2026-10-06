@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Regenerates cv/resume-{en,bg}.pdf (2 pages) and cv/cv-{en,bg}.pdf (3 pages) from src/cv/{en,bg}.html
+# Regenerates cv/cv-{en,bg}.pdf (2 pages each) from src/cv/{en,bg}.html
 # with headless Chromium. Needs: chromium or google-chrome, poppler-utils (pdfinfo) and the Noto Sans font (Cyrillic).
 set -euo pipefail
 
@@ -23,10 +23,10 @@ fi
 trap 'rm -rf "$WORK"' EXIT
 cp "$ROOT"/src/cv/*.html "$ROOT"/src/cv/cv.css "$WORK"/
 
-render() { # <lang> <query> <output name> <expected pages>
-	local lang="$1" query="$2" out="$3" pages="$4"
+render() { # <lang> <output name> <expected pages>
+	local lang="$1" out="$2" pages="$3"
 	"$CHROME" --headless --no-sandbox --disable-gpu --no-pdf-header-footer \
-		--print-to-pdf="$WORK/$out.pdf" "file://$WORK/$lang.html$query" >/dev/null 2>&1
+		--print-to-pdf="$WORK/$out.pdf" "file://$WORK/$lang.html" >/dev/null 2>&1
 	local info; info="$(pdfinfo "$WORK/$out.pdf")"
 	if grep -q 'OVERFLOW' <<<"$info"; then echo "build-cv: $out overflows its page" >&2; exit 1; fi
 	local got; got="$(awk '/^Pages:/ {print $2}' <<<"$info")"
@@ -35,7 +35,5 @@ render() { # <lang> <query> <output name> <expected pages>
 	echo "cv/$out.pdf ($got pages)"
 }
 
-render en ""      resume-en 2
-render bg ""      resume-bg 2
-render en "?full" cv-en     3
-render bg "?full" cv-bg     3
+render en cv-en 2
+render bg cv-bg 2
