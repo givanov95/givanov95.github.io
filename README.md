@@ -10,6 +10,7 @@ vanilla-JS file for interactions.
 
 - **HTML** — single `index.html`, semantic sections
 - **Tailwind CSS v4** — theme in `src/styles.css`, compiled with the Tailwind CLI to `assets/css/styles.css` (committed)
+- **Fonts** — Figtree and Young Serif, self-hosted as `woff2` in `assets/fonts/` (no third-party requests)
 - **Vanilla JS** — no framework, no dependencies (`assets/js/main.js`)
 - **GitHub Pages** — static hosting straight from the repo (no CI)
 
@@ -30,6 +31,7 @@ vanilla-JS file for interactions.
 ├── src/styles.css      # Stylesheet source: Tailwind import, theme (colours, fonts), custom styles
 ├── assets/
 │   ├── css/styles.css   # Compiled + minified CSS (generated — do not edit by hand)
+│   ├── fonts/           # Self-hosted woff2 fonts (Figtree, Young Serif) + their OFL licenses
 │   └── js/main.js       # Scroll-spy, CV modal, copy email
 ├── cv/                 # Resume / CV PDFs (EN + BG)
 ├── images/             # Photos and assets
