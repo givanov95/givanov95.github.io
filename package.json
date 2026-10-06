@@ -4,7 +4,8 @@
 	"description": "Personal portfolio of Georgi Ivanov — static site, Tailwind compiled to a committed stylesheet.",
 	"scripts": {
 		"build": "tailwindcss -i src/styles.css -o assets/css/styles.css --minify",
-		"dev": "tailwindcss -i src/styles.css -o assets/css/styles.css --watch"
+		"dev": "tailwindcss -i src/styles.css -o assets/css/styles.css --watch",
+		"cv": "bash scripts/build-cv.sh"
 	},
 	"devDependencies": {
 		"@tailwindcss/cli": "^4.3.3",
