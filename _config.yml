@@ -1,0 +1,9 @@
+# GitHub Pages runs Jekyll over the repo before publishing it. Keep
+# project/tooling files out of the published site (they stay in the repo).
+exclude:
+  - CLAUDE.md
+  - README.md
+  - package.json
+  - package-lock.json
+  - src
+  - node_modules

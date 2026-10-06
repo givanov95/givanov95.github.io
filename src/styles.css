@@ -1,0 +1,62 @@
+/* ============================================================
+   Stylesheet source — compiled by Tailwind v4 into
+   assets/css/styles.css (committed; GitHub Pages serves it as is).
+   Rebuild after changing classes in index.html or main.js:
+       npm run build
+   Warm "Profile Sidebar" theme (Claude Design).
+   ============================================================ */
+
+@import "tailwindcss" source(none);
+
+/* Scan only the files that actually use classes (not README / CLAUDE.md) */
+@source "../index.html";
+@source "../assets/js/main.js";
+
+@theme {
+	--font-sans: 'Figtree', ui-sans-serif, system-ui, sans-serif;
+	--font-serif: 'Young Serif', ui-serif, Georgia, serif;
+
+	--color-cream: #fff8f1;
+	--color-ink: #23201c;
+	--color-muted: #6a6258;
+	--color-soft: #5a5249;
+	--color-accent: #d9542c;
+	--color-coral: #ff9a6b;
+	--color-peach: #ffe9da;
+	--color-peach-deep: #ffd9c4;
+	--color-blush: #fff1e6;
+	--color-sand: #fbf4ec;
+	--color-line: #f1e8de;
+	--color-mint: #e3f4e8;
+	--color-mint-ink: #1b6b3d;
+	--color-sky: #e6ecfb;
+	--color-butter: #fcefc7;
+	--color-rose: #f6e3f1;
+}
+
+/* Custom styles live in layers so Tailwind utilities can still override them */
+@layer base {
+	html { background: var(--color-cream); scroll-behavior: smooth; }
+	body { min-height: 100vh; }
+
+	/* Tailwind v4 dropped the pointer cursor on buttons */
+	button:not(:disabled),
+	[role="button"]:not(:disabled) { cursor: pointer; }
+
+	/* Warm, thin scrollbar */
+	* { scrollbar-width: thin; scrollbar-color: #e8d9c8 transparent; }
+	*::-webkit-scrollbar { width: 10px; height: 10px; }
+	*::-webkit-scrollbar-thumb { background: #e8d9c8; border-radius: 99px; }
+	*::-webkit-scrollbar-thumb:hover { background: #d3bfa9; }
+
+	/* Respect reduced-motion */
+	@media (prefers-reduced-motion: reduce) {
+		html { scroll-behavior: auto; }
+		* { transition: none !important; }
+	}
+}
+
+@layer components {
+	/* Active sidebar nav link (set by scroll-spy in main.js) */
+	.nav-link.active { background: var(--color-blush); }
+}
